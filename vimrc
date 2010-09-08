@@ -85,6 +85,8 @@ nnoremap <M-h> <C-w>h
 nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
+" 補完
+imap <C-o> <C-x><C-o>
 
 " -------------------
 " ヘルプ設定
@@ -133,8 +135,16 @@ if has("syntax")
     syntax on
         augroup invisible
         autocmd! invisible
-        autocmd BufNew,BufRead * call SOLSpaceHilight()
+        "autocmd BufNew,BufRead * call SOLSpaceHilight()
         autocmd BufNew,BufRead * call JISX0208SpaceHilight()
     augroup END
 endif
 
+" -------------------
+" plugin 
+" -------------------
+"ruby-vim
+"Rubyのオムニ補完を設定(ft-ruby-omni)
+let g:rubycomplete_buffer_loading = 1
+let g:rubycomplete_classes_in_global = 1
+let g:rubycomplete_rails = 1
