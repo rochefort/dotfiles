@@ -32,20 +32,21 @@ set fileformats=unix,dos,mac
 set ambiwidth=double " 記号(※とか△とか)入力時にカーソルがズレないように設定
 set autoindent
 set autoread
+set backspace=indent,eol,start
 set backupdir=~/.Trash
 set cursorline
 set display=lastline
 set laststatus=2
 set list
 set listchars=tab:»\
-"set mouse=a
+set mouse=a
 set nobackup
 set nocompatible           " vi機能優先しない
 set noexpandtab            " tab -> space 置換なし
 set number
 set ruler
 set showcmd
-set showmatch
+set showmatch              " 対応する括弧を表示
 set smartindent
 set tabstop=4 shiftwidth=4
 set ttimeoutlen=0
@@ -87,17 +88,21 @@ nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
 " 補完
 imap <C-o> <C-x><C-o>
+imap { {}<LEFT>
+imap [ []<LEFT>
+imap ( ()<LEFT>
 
 " -------------------
 " ヘルプ設定
 " -------------------
-helptags $HOME/.vim/doc
+"todo
+"helptags $HOME/.vim/doc
 
 " -------------------
 " autocmd
 " -------------------
 " 挿入モード時、paste オプションを解除する
-autocmd InsertLeave * set nopaste
+"autocmd InsertLeave * set nopaste
 
 " 自動的に QuickFix リストを表示する
 autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
@@ -106,13 +111,9 @@ autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 " -------------------
 " filetype
 " -------------------
-augroup filetypedetect
-	au! BufNewFile,BufRead *.rhtml :setf ruby
-augroup END
-
 au FileType c,cpp,perl set ts=4 sw=4 expandtab
 au FileType python set ts=4 sw=4 expandtab
-au FileType ruby,eruby set nowrap ts=2 sw=2 expandtab
+au FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
 au FileType html set filetype=xhtml
 
 " -------------------
@@ -143,8 +144,23 @@ endif
 " -------------------
 " plugin 
 " -------------------
-"ruby-vim
+call pathogen#runtime_append_all_bundles()
+"vim-ruby
 "Rubyのオムニ補完を設定(ft-ruby-omni)
 let g:rubycomplete_buffer_loading = 1
 let g:rubycomplete_classes_in_global = 1
 let g:rubycomplete_rails = 1
+let ruby_space_errors = 1
+
+"vim-rails
+function! Rspec ()
+  let rails_spec_pat = '\<spec/\(models\|controllers\|views\|helpers\)/.*_spec\.rb$'
+  if expand('%:p') =~ rails_spec_pat
+    exe '!ruby script/spec -fn -c %:p -l '.line('.')
+    "exe '!rake spec SPEC="'.expand('%:p').'" RSPECOPTS="-fs -c -l '.line('.').'"'
+  else
+    :!spec -fn -c %
+  endif
+endfunction
+
+au BufRead,BufNewFile *_spec.rb :command! Rs :call Rspec()
