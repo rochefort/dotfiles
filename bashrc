@@ -2,6 +2,7 @@
 #ulimit -c 0
 date
 #export LANG=ja_JP.UTF-8
+
 PAGER=less 
 export LESSCHARSET=utf-8
 
@@ -24,8 +25,10 @@ export LSCOLORS=exFhCxDxbxegedabagacad
 #export CVSROOT=${HOME}/cvsroot
 
 #default(\h:\w \u\$)
+#color->  \[\033 // m\]
 #export PS1="[\u@\h \t \W]\$ "
 #export PS1="[\u \t \W]\$ "
+#export PS1="\[\033[0;33m\]\h:\W \u\$"
 
 # for perl
 export MODULE_STARTER_DIR=${HOME}/.module-starter
