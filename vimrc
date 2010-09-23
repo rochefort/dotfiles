@@ -3,7 +3,7 @@ filetype indent plugin on
 " -------------------
 " color
 " -------------------
-syntax enable
+syntax on
 
 highlight LineNr ctermfg=lightgrey
 "hightligh LineNr ctermfg=darkyellow    " 行番号
