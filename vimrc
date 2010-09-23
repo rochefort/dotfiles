@@ -99,12 +99,6 @@ nnoremap <unique> <silent> <space>fm :FufMruFile!<CR>
 nnoremap <unique> <silent> <Space>fc :FufRenewCache<CR>
 
 " -------------------
-" ヘルプ設定
-" -------------------
-"todo
-"helptags $HOME/.vim/doc
-
-" -------------------
 " autocmd
 " -------------------
 " 挿入モード時、paste オプションを解除する
@@ -151,6 +145,8 @@ endif
 " plugin 
 " -------------------
 call pathogen#runtime_append_all_bundles()
+call pathogen#helptags()
+
 "vim-ruby
 "Rubyのオムニ補完を設定(ft-ruby-omni)
 let g:rubycomplete_buffer_loading = 1
