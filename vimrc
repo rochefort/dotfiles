@@ -91,6 +91,12 @@ imap <C-o> <C-x><C-o>
 imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
+"fuzzyfinder
+nnoremap <unique> <silent> <space>fb :FufBuffer!<CR>
+nnoremap <unique> <C-t> :FufFile!<CR>
+"nnoremap <unique> <silent> <space>ff :FufFile!<CR>
+nnoremap <unique> <silent> <space>fm :FufMruFile!<CR>
+nnoremap <unique> <silent> <Space>fc :FufRenewCache<CR>
 
 " -------------------
 " ヘルプ設定
@@ -164,3 +170,13 @@ function! Rspec ()
 endfunction
 
 au BufRead,BufNewFile *_spec.rb :command! Rs :call Rspec()
+
+"fuzzy_finder
+autocmd FileType fuf nmap <C-c> <ESC>
+let g:fuf_patternSeparator = ' '
+let g:fuf_modesDisable = ['mrucmd']
+let g:fuf_mrufile_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
+let g:fuf_mrufile_maxItem = 100
+let g:fuf_enumeratingLimit = 20
+let g:fuf_file_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
+
