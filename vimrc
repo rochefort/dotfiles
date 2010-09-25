@@ -6,7 +6,7 @@ filetype indent plugin on
 syntax on
 
 highlight LineNr ctermfg=lightgrey
-"hightligh LineNr ctermfg=darkyellow    " 行番号
+"hightlight LineNr ctermfg=darkyellow    " 行番号
 highlight NonText ctermfg=darkgrey
 highlight Folded ctermfg=blue
 highlight SpecialKey cterm=underline ctermfg=darkgrey
@@ -34,6 +34,8 @@ set autoindent
 set autoread
 set backspace=indent,eol,start
 set backupdir=~/.Trash
+set clipboard+=autoselect      " visual selection -> clipboard
+set clipboard+=unnamed         " yank -> clipboard
 set cursorline
 set display=lastline
 set laststatus=2
