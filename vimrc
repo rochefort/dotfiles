@@ -88,6 +88,7 @@ nnoremap <M-h> <C-w>h
 nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
+nmap <silent> <C-N> :noh<CR>
 " 補完
 imap <C-o> <C-x><C-o>
 imap { {}<LEFT>
