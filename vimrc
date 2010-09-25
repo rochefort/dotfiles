@@ -13,9 +13,9 @@ highlight SpecialKey cterm=underline ctermfg=darkgrey
 "highlight SpecialKey ctermfg=grey " 特殊記号
 highlight StatusLine term=NONE cterm=NONE ctermfg=black ctermbg=white
 " ポップアップの配色
-highlight Pmenu guibg=#666666
-highlight PmenuSel guibg=#8cd0d3 guifg=#666666
-highlight PmenuSbar guibg=#333333
+highlight Pmenu ctermbg=4 guibg=#666666
+highlight PmenuSel ctermbg=1 guibg=#8cd0d3 guifg=#666666
+highlight PmenuSbar ctermbg=4 guibg=#333333
 
 " -------------------
 " encoding
