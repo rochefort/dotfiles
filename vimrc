@@ -114,12 +114,6 @@ nnoremap <unique> <silent> tb :<C-u>tabnew<CR>:tabmove<CR>:FufBuffer!<CR>
 nnoremap <unique> <silent> tf :<C-u>tabnew<CR>:tabmove<CR>:FufFile! <C-r>=expand('#:~:.')[:-1-len(expand('#:~:.:t'))]<CR><CR>
 nnoremap <unique> <silent> tm :<C-u>tabnew<CR>:tabmove<CR>:FufMruFile!<CR>
 
-"nnoremap <unique> <silent> <space>fb :FufBuffer!<CR>
-"nnoremap <unique> <C-t> :FufFile!<CR>
-""nnoremap <unique> <silent> <space>ff :FufFile!<CR>
-"nnoremap <unique> <silent> <space>fm :FufMruFile!<CR>
-"nnoremap <unique> <silent> <Space>fc :FufRenewCache<CR>
-
 " -------------------
 " autocmd
 " -------------------
