@@ -94,12 +94,31 @@ imap <C-o> <C-x><C-o>
 imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
+"Tabs
+nnoremap <Space>t t
+nnoremap <Space>T T
+nnoremap t <Nop>
+nnoremap <silent> tc :<C-u>tabnew<CR>:tabmove<CR>
+nnoremap <silent> tk :<C-u>tabclose<CR>
+nnoremap <silent> tn :<C-u>tabnext<CR>
+nnoremap <silent> tp :<C-u>tabprevious<CR>
 "fuzzyfinder
-nnoremap <unique> <silent> <space>fb :FufBuffer!<CR>
-nnoremap <unique> <C-t> :FufFile!<CR>
-"nnoremap <unique> <silent> <space>ff :FufFile!<CR>
-nnoremap <unique> <silent> <space>fm :FufMruFile!<CR>
-nnoremap <unique> <silent> <Space>fc :FufRenewCache<CR>
+nnoremap <Space>f f
+nnoremap <Space>F F
+nnoremap f <Nop>
+nnoremap <unique> <silent> fb :<C-u>FufBuffer!<CR>
+nnoremap <unique> <silent> ff :<C-u>FufFile! <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
+nnoremap <unique> <silent> <C-t> :<C-u>FufFile! <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
+nnoremap <unique> <silent> fm :<C-u>FufMruFile!<CR>
+nnoremap <unique> <silent> tb :<C-u>tabnew<CR>:tabmove<CR>:FufBuffer!<CR>
+nnoremap <unique> <silent> tf :<C-u>tabnew<CR>:tabmove<CR>:FufFile! <C-r>=expand('#:~:.')[:-1-len(expand('#:~:.:t'))]<CR><CR>
+nnoremap <unique> <silent> tm :<C-u>tabnew<CR>:tabmove<CR>:FufMruFile!<CR>
+
+"nnoremap <unique> <silent> <space>fb :FufBuffer!<CR>
+"nnoremap <unique> <C-t> :FufFile!<CR>
+""nnoremap <unique> <silent> <space>ff :FufFile!<CR>
+"nnoremap <unique> <silent> <space>fm :FufMruFile!<CR>
+"nnoremap <unique> <silent> <Space>fc :FufRenewCache<CR>
 
 " -------------------
 " autocmd
