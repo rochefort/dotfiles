@@ -5,17 +5,18 @@ filetype indent plugin on
 " -------------------
 syntax on
 
-highlight LineNr ctermfg=lightgrey
-"hightlight LineNr ctermfg=darkyellow    " 行番号
+highlight LineNr ctermfg=lightgrey   " 行番号
 highlight NonText ctermfg=darkgrey
 highlight Folded ctermfg=blue
-highlight SpecialKey cterm=underline ctermfg=darkgrey
-"highlight SpecialKey ctermfg=grey " 特殊記号
+highlight SpecialKey cterm=underline ctermfg=darkgrey " 特殊記号
 highlight StatusLine term=NONE cterm=NONE ctermfg=black ctermbg=white
+highlight TabLine     cterm=none ctermfg=black ctermbg=white
+highlight TabLineSel  cterm=bold ctermfg=white ctermbg=black
+highlight TabLineFill ctermfg=white
 " ポップアップの配色
-highlight Pmenu ctermbg=4 guibg=#666666
-highlight PmenuSel ctermbg=1 guibg=#8cd0d3 guifg=#666666
-highlight PmenuSbar ctermbg=4 guibg=#333333
+highlight Pmenu ctermbg=darkblue
+highlight PmenuSel ctermbg=darkred
+highlight PmenuSbar ctermbg=darkblue
 
 " -------------------
 " encoding
