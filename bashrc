@@ -55,23 +55,10 @@ function wman() {
 function mountAndroid {
   hdiutil attach ~/lib/android.dmg  -mountpoint /Volumes/android; 
 }
-#--------------------------------------
-alias rm='rm -i'
-alias mv='mv -i'
-alias cp='cp -i'
-alias ls='ls -vF'
-alias ll='ls -al'
-alias l='ls'
-alias h='history'
-alias fcd='cd `fcd.sh`'
-alias memo='more ~/memo.txt'
-alias rhelp='open ~/Dropbox/doc/ruby_help/ruby-refm-1.8.7-20100729.chm'
-#alias plagger='plagger -c /usr/local/plagger/config.yaml'
-#alias refe='refe_utf8'
-alias refe='refe_utf8'
-alias hatenabk='ruby ~/work/ruby/hatena/diary_backup/backup.rb'
-alias vi='vim'
-alias sgi32="sudo env ARCHFLAGS='-Os -arch i386 -fno-common' gem install --no-ri --no-rdoc"
-alias sgi64="sudo env ARCHFLAGS='-Os -arch x86_64 -fno-common' gem install --no-ri --no-rdoc"
-alias sgi="sgi64"
+#function u() {
+#    cd ./$(git rev-parse --show-cdup)
+#    if [ $# = 1 ]; then
+#        cd $1
+#    fi
+#}
 #--------------------------------------
