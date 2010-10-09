@@ -34,7 +34,8 @@ export LSCOLORS=exFhCxDxbxegedabagacad
 export MODULE_STARTER_DIR=${HOME}/.module-starter
 
 # for git
-export GIT_EDITOR="mate -w"
+export GIT_EDITOR="vim"
+#export GIT_EDITOR="mate -w"
 
 #--------------------------------------
 function showexit {
