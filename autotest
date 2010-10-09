@@ -1,1 +1,29 @@
 require 'autotest/growl'
+#Autotest::Growl::image_dir = 'ampelmaennchen'
+Autotest::Growl::image_dir = File.join(ENV['HOME'], 'Pictures/autotest')
+
+#Autotest.add_hook :initialize do |at|
+#  at.add_exception '.git'
+#end
+
+#Autotest.add_hook :initialize do |autotest|
+
+#Autotest.add_hook :run do |at|
+#  %w{.git .DS_store db log tmp rerun.txt}.each do |e|
+#    at.add_exception(e)
+#  end
+#end
+
+#Pictures/autotest
+#Autotest.add_discovery do
+#  "rspec"
+#end
+#Autotest.add_hook :initialize do |at|
+#  at.add_mapping(%r%^(?!.*/)(.*?)(_spec)?\.rb$%) { |filename, m|
+#    if m[2]
+#      filename
+#    else
+#      "spec_bk/#{m[1]}_spec.rb"
+#    end
+#  }
+#end
