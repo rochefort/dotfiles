@@ -95,6 +95,7 @@ imap <C-o> <C-x><C-o>
 imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
+imap <silent> <C-p> <Space>=> <RIGHT>
 "Tabs
 nnoremap <Space>t t
 nnoremap <Space>T T
