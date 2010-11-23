@@ -1,5 +1,5 @@
-alias cd='pushd'
-alias p='popd'
+#alias cd='pushd'
+#alias p='popd'
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
