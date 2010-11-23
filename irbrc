@@ -7,6 +7,7 @@ begin
   require 'rubygems'
   require 'irb/completion'
   require 'pp'
+  require 'what_methods'
   require 'wirble'
   require 'hirb'       # after wirble
   Wirble.init
