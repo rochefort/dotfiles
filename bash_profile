@@ -14,7 +14,7 @@ export PATH=$HOME/lib/flex_sdk_3/bin:$PATH
 #for textmate bundle
 export LC_TYPE=en_US.UTF-8
 
-if [[ -s $HOME/.rvm/scripts/rvm ]] ; then source $HOME/.rvm/scripts/rvm ; fi
+if [[ -s $HOME/.rvm/scripts/rvm ]] ; then . $HOME/.rvm/scripts/rvm ; fi
 
 # after rvm sourced
 if [ -f ~/.bash_alias ]; then . ~/.bash_alias ; fi
