@@ -37,6 +37,8 @@ export MODULE_STARTER_DIR=${HOME}/.module-starter
 export GIT_EDITOR="vim"
 #export GIT_EDITOR="mate -w"
 
+export RSENSE_HOME=$HOME/lib/rsense-0.3
+
 #--------------------------------------
 function showexit {
   local s=$?

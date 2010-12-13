@@ -202,3 +202,15 @@ inoremap <buffer> <expr> , smartchr#loop(', ', ',')
 inoremap <buffer> <expr> . smartchr#loop('.', '<%=  %>', '<%  %>')
 "inoremap <buffer> <expr> . smartchr#loop('.', '<%=  %><LEFT><LEFT><LEFT>', '<%  %><LEFT><LEFT><LEFT>')
 
+"rsense
+let g:rsenseHome = "/Users/snoozer/lib/rsense-0.3"
+let g:rsenseUseOmniFunc = 1
+
+"neocomplcache
+let g:neocomplcache_enable_at_startup = 1 
+let g:NeoComplCache_EnableSkipCompletion = 0
+if !exists('g:NeoComplCache_OmniPatterns')
+	let g:NeoComplCache_OmniPatterns = {}
+endif
+let g:NeoComplCache_OmniPatterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
