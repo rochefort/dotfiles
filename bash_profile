@@ -18,3 +18,6 @@ if [[ -s $HOME/.rvm/scripts/rvm ]] ; then . $HOME/.rvm/scripts/rvm ; fi
 
 # after rvm sourced
 if [ -f ~/.bash_alias ]; then . ~/.bash_alias ; fi
+
+# git-completion.bash
+if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then . /usr/local/etc/bash_completion.d/git-completion.bash; fi
