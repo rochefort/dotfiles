@@ -20,4 +20,5 @@ alias sgi64="sudo env ARCHFLAGS='-Os -arch x86_64 -fno-common' gem install --no-
 alias sgi="sgi64"
 alias gl='git log --graph --date=short --pretty=format:"%Cgreen%h %cd %Cblue%cn %Creset%s"'
 alias gs='git status'
-alias gd='git diff --cached'
+alias gd='git diff'
+alias gdc='git diff --cached'
