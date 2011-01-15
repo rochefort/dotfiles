@@ -43,3 +43,6 @@
 [submodule "vim/bundle/neocomplcache.git"]
 	path = vim/bundle/neocomplcache.git
 	url = https://github.com/Shougo/neocomplcache.git
+[submodule "vim/bundle/JavaScript-syntax.git"]
+	path = vim/bundle/JavaScript-syntax.git
+	url = https://github.com/vim-scripts/JavaScript-syntax.git
