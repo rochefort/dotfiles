@@ -195,11 +195,11 @@ let g:fuf_enumeratingLimit = 20
 let g:fuf_file_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
 
 "smartchr
-inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
-inoremap <buffer> <expr> <S-=> smartchr#loop(' + ', '+')
-inoremap <buffer> <expr> - smartchr#loop(' - ', '-')
-inoremap <buffer> <expr> , smartchr#loop(', ', ',')
-inoremap <buffer> <expr> . smartchr#loop('.', '<%=  %>', '<%  %>')
+"inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
+"inoremap <buffer> <expr> <S-=> smartchr#loop(' + ', '+')
+"inoremap <buffer> <expr> - smartchr#loop(' - ', '-')
+"inoremap <buffer> <expr> , smartchr#loop(', ', ',')
+"inoremap <buffer> <expr> . smartchr#loop('.', '<%=  %>', '<%  %>')
 "inoremap <buffer> <expr> . smartchr#loop('.', '<%=  %><LEFT><LEFT><LEFT>', '<%  %><LEFT><LEFT><LEFT>')
 
 "rsense
