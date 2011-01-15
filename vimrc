@@ -95,7 +95,7 @@ imap <C-o> <C-x><C-o>
 imap { {}<LEFT>
 imap [ []<LEFT>
 imap ( ()<LEFT>
-imap <silent> <C-p> <Space>=> <RIGHT>
+"imap <silent> <C-p> <Space>=> <RIGHT>
 "Tabs
 nnoremap <Space>t t
 nnoremap <Space>T T
@@ -120,7 +120,7 @@ nnoremap <unique> <silent> tm :<C-u>tabnew<CR>:tabmove<CR>:FufMruFile!<CR>
 " autocmd
 " -------------------
 " 挿入モード時、paste オプションを解除する
-"autocmd InsertLeave * set nopaste
+autocmd InsertLeave * set nopaste
 
 " 自動的に QuickFix リストを表示する
 autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
@@ -207,7 +207,7 @@ let g:rsenseHome = "/Users/snoozer/lib/rsense-0.3"
 let g:rsenseUseOmniFunc = 1
 
 "neocomplcache
-let g:neocomplcache_enable_at_startup = 1 
+"let g:neocomplcache_enable_at_startup = 1 
 let g:NeoComplCache_EnableSkipCompletion = 0
 if !exists('g:NeoComplCache_OmniPatterns')
 	let g:NeoComplCache_OmniPatterns = {}
