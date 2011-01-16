@@ -124,7 +124,7 @@ autocmd FileType c,cpp,perl set ts=4 sw=4 expandtab
 autocmd FileType python set ts=4 sw=4 expandtab
 autocmd FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
 autocmd FileType html set filetype=xhtml
-autocmd FileType javascriipt set ts=4 sw=4 expandtab
+autocmd FileType javascript set ts=4 sw=4 expandtab
 autocmd BufNewFile *.js set ft=javascript fenc=utf-8
 
 " -------------------
