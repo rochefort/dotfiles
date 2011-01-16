@@ -89,6 +89,7 @@ nnoremap <M-h> <C-w>h
 nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
+nnoremap <C-p> :set paste<CR>i
 nmap <silent> <C-N> :noh<CR>
 " 補完
 imap <C-o> <C-x><C-o>
@@ -117,23 +118,28 @@ nnoremap <unique> <silent> tf :<C-u>tabnew<CR>:tabmove<CR>:FufFile! <C-r>=expand
 nnoremap <unique> <silent> tm :<C-u>tabnew<CR>:tabmove<CR>:FufMruFile!<CR>
 
 " -------------------
+" filetype
+" -------------------
+autocmd FileType c,cpp,perl set ts=4 sw=4 expandtab
+autocmd FileType python set ts=4 sw=4 expandtab
+autocmd FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
+autocmd FileType html set filetype=xhtml
+autocmd FileType javascriipt set ts=4 sw=4 expandtab
+autocmd BufNewFile *.js set ft=javascript fenc=utf-8
+
+" -------------------
 " autocmd
 " -------------------
 " 挿入モード時、paste オプションを解除する
-autocmd InsertLeave * set nopaste
+"autocmd InsertLeave * set nopaste
 
 " 自動的に QuickFix リストを表示する
 autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
-" -------------------
-" filetype
-" -------------------
-au FileType c,cpp,perl set ts=4 sw=4 expandtab
-au FileType python set ts=4 sw=4 expandtab
-au FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
-au FileType html set filetype=xhtml
-
+"前回表示箇所を記憶
+autocmd BufWritePost * mkview
+autocmd BufReadPost * loadview
 " -------------------
 " function 
 " -------------------
