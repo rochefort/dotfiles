@@ -214,7 +214,15 @@ let g:rsenseHome = "/Users/snoozer/lib/rsense-0.3"
 let g:rsenseUseOmniFunc = 1
 
 "neocomplcache
-"let g:neocomplcache_enable_at_startup = 1 
+let g:neocomplcache_enable_at_startup = 1
+let g:neocomplcache_max_list = 30
+let g:neocomplcache_enable_smart_case = 1
+"" like AutoComplPop
+let g:neocomplcache_enable_auto_select = 1
+"" search with camel case like Eclipse
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+
 let g:NeoComplCache_EnableSkipCompletion = 0
 if !exists('g:NeoComplCache_OmniPatterns')
 	let g:NeoComplCache_OmniPatterns = {}
