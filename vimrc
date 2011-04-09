@@ -93,9 +93,9 @@ nnoremap <C-p> :set paste<CR>i
 nmap <silent> <C-N> :noh<CR>
 " 補完
 imap <C-o> <C-x><C-o>
-imap { {}<LEFT>
-imap [ []<LEFT>
-imap ( ()<LEFT>
+"imap { {}<LEFT>
+"imap [ []<LEFT>
+"imap ( ()<LEFT>
 "imap <silent> <C-p> <Space>=> <RIGHT>
 "Tabs
 nnoremap <Space>t t
@@ -201,6 +201,7 @@ let g:fuf_enumeratingLimit = 20
 let g:fuf_file_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
 
 "smartchr
+inoremap <expr> <buffer> {  smartchr#loop('{', '#{', '{{{')
 "inoremap <buffer> <expr> = smartchr#loop(' = ', ' == ', '=')
 "inoremap <buffer> <expr> <S-=> smartchr#loop(' + ', '+')
 "inoremap <buffer> <expr> - smartchr#loop(' - ', '-')
