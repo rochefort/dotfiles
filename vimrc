@@ -1,3 +1,5 @@
+scriptencoding utf-8
+
 filetype indent plugin on
 
 " -------------------
@@ -32,13 +34,15 @@ set fileformats=unix,dos,mac
 " -------------------
 set ambiwidth=double " 記号(※とか△とか)入力時にカーソルがズレないように設定
 set autoindent
-set autoread
+set autoread                   " 外部のエディタで編集中のファイルが変更されたら再読み込み
 set backspace=indent,eol,start
 set backupdir=~/.Trash
 set clipboard+=autoselect      " visual selection -> clipboard
 set clipboard+=unnamed         " yank -> clipboard
+set complete+=k                " 辞書ファイルからの単語補完
 set cursorline
 set display=lastline
+set formatoptions+=r
 set laststatus=2
 set list
 set listchars=tab:»\
@@ -51,10 +55,12 @@ set ruler
 set showcmd
 set showmatch              " 対応する括弧を表示
 set smartindent
+set suffixes=.bak,~,.swp
 set tabstop=4 shiftwidth=4
 set ttimeoutlen=0
 set virtualedit=block
 set visualbell t_vb=       " no beep
+set wildmode=list,full     " コマンドライン補完
 
 
 " -------------------
@@ -83,32 +89,41 @@ set smartcase    " 大文字が含まれていれば区別して検索
 " -------------------
 "noremap ; :
 "noremap : ;
-nnoremap + <C-w>+
-nnoremap _ <C-w>-
+"nnoremap + <C-w>+
+"nnoremap _ <C-w>-
 nnoremap <M-h> <C-w>h
 nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
+
+imap <C-j> <Down>
+imap <C-k> <Up>
+imap <C-h> <Left>
+imap <C-l> <Right>
+
 nnoremap <C-p> :set paste<CR>i
 nmap <silent> <C-N> :noh<CR>
+
+
 " 補完
 imap <C-o> <C-x><C-o>
 "imap { {}<LEFT>
 "imap [ []<LEFT>
 "imap ( ()<LEFT>
 "imap <silent> <C-p> <Space>=> <RIGHT>
+
 "Tabs
-nnoremap <Space>t t
-nnoremap <Space>T T
-nnoremap t <Nop>
+"nnoremap <Space>t t
+"nnoremap <Space>T T
+"nnoremap t <Nop>
 nnoremap <silent> tc :<C-u>tabnew<CR>:tabmove<CR>
 nnoremap <silent> tk :<C-u>tabclose<CR>
 nnoremap <silent> tn :<C-u>tabnext<CR>
 nnoremap <silent> tp :<C-u>tabprevious<CR>
 "fuzzyfinder
-nnoremap <Space>f f
-nnoremap <Space>F F
-nnoremap f <Nop>
+"nnoremap <Space>f f
+"nnoremap <Space>F F
+"nnoremap f <Nop>
 nnoremap <unique> <silent> fb :<C-u>FufBuffer!<CR>
 nnoremap <unique> <silent> ff :<C-u>FufFile! <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
 nnoremap <unique> <silent> <C-t> :<C-u>FufFile! <C-r>=expand('%:~:.')[:-1-len(expand('%:~:.:t'))]<CR><CR>
@@ -127,11 +142,17 @@ autocmd FileType html set filetype=xhtml
 autocmd FileType javascript set ts=4 sw=4 expandtab
 autocmd BufNewFile *.js set ft=javascript
 
+" for rails
+autocmd BufNewFile,BufRead app/**/*.rhtml set fenc=utf-8
+autocmd BufNewFile,BufRead app/**/*.erb set fenc=utf-8
+autocmd BufNewFile,BufRead app/**/*.haml set fenc=utf-8
+autocmd BufNewFile,BufRead app/**/*.rb set fenc=utf-8
+
 " -------------------
 " autocmd
 " -------------------
-" 挿入モード時、paste オプションを解除する
-"autocmd InsertLeave * set nopaste
+" Insert mode抜けたら nopaste
+autocmd InsertLeave * set nopaste
 
 " 自動的に QuickFix リストを表示する
 autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
@@ -141,19 +162,24 @@ autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 autocmd BufWritePost * mkview
 autocmd BufReadPost * loadview
 " -------------------
-" function 
+" function
 " -------------------
-"行頭のスペースの連続をハイライトさせる
+"行頭のスペースの連続をハイライト
 "Tab文字も区別されずにハイライトされるので、区別したいときはTab文字の表示を別に
 "設定する必要がある。
 function! SOLSpaceHilight()
     syntax match SOLSpace "^\s\+" display containedin=ALL
     highlight SOLSpace term=underline ctermbg=darkblue
 endf
-"全角スペースをハイライトさせる。
+"全角スペースをハイライト
 function! JISX0208SpaceHilight()
     syntax match JISX0208Space "　" display containedin=ALL
     highlight JISX0208Space term=underline ctermbg=LightCyan
+endf
+"行末スペースをハイライト
+function! TrailedSpaceHightlight()
+    syntax match TrailedSpace "[ \t]\+$" display containedin=ALL
+    highlight TrailedSpace term=underline ctermbg=Red guibg=Red
 endf
 "syntaxの有無をチェックし、新規バッファと新規読み込み時にハイライトさせる
 if has("syntax")
@@ -162,11 +188,24 @@ if has("syntax")
         autocmd! invisible
         "autocmd BufNew,BufRead * call SOLSpaceHilight()
         autocmd BufNew,BufRead * call JISX0208SpaceHilight()
+        autocmd BufNew,BufRead * call TrailedSpaceHightlight()
     augroup END
 endif
 
+:function! HtmlEscape()
+silent s/&/\&amp;/eg
+silent s/</\&lt;/eg
+silent s/>/\&gt;/eg
+:endfunction
+
+:function! HtmlUnEscape()
+silent s/&lt;/</eg
+silent s/&gt;/>/eg
+silent s/&amp;/\&/eg
+:endfunction
+
 " -------------------
-" plugin 
+" plugin
 " -------------------
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
@@ -179,6 +218,8 @@ let g:rubycomplete_rails = 1
 let ruby_space_errors = 1
 
 "vim-rails
+let g:rails_level=4
+let g:rails_statusline=1
 function! Rspec ()
   let rails_spec_pat = '\<spec/\(models\|controllers\|views\|helpers\)/.*_spec\.rb$'
   if expand('%:p') =~ rails_spec_pat
