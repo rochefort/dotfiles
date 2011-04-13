@@ -29,6 +29,7 @@ export LSCOLORS=exFhCxDxbxegedabagacad
 #export PS1="[\u@\h \t \W]\$ "
 #export PS1="[\u \t \W]\$ "
 #export PS1="\[\033[0;33m\]\h:\W \u\$"
+export PS1="[\t \W]\\$ "
 
 # for perl
 export MODULE_STARTER_DIR=${HOME}/.module-starter
