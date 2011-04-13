@@ -9,3 +9,13 @@ gem: --no-rdoc --no-ri
 :update_sources: true
 :backtrace: false
 :bulk_threshold: 1000
+
+test_options:
+  auto_test_on_install: true # package のインストール時に自動でテストを行うか
+  test_on_install: true # package のインストール時にテストを行うか(Y/n)で尋ねられる
+  install_development_dependencies: true # add_development_dependency なパッケージもインストールするか
+  test_development_dependencies: false # add_development_dependency なパッケージもテストするか(たぶん)
+  upload_results: false # テスト結果を test.rubygems.org にアップロードするか
+  force_install: false # テストに失敗しても強制的にインストールするか
+  force_uninstall_on_failure: false #  テストに失敗したらアンインストールするか(たぶん)
+
