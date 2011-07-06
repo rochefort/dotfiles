@@ -19,10 +19,12 @@ alias vi='vim'
 alias sgi32="sudo env ARCHFLAGS='-Os -arch i386 -fno-common' gem install --no-ri --no-rdoc"
 alias sgi64="sudo env ARCHFLAGS='-Os -arch x86_64 -fno-common' gem install --no-ri --no-rdoc"
 alias sgi="sgi64"
-alias gl='git log --graph --date=short --pretty=format:"%Cgreen%h %cd %Cblue%cn %Creset%s"'
+#alias gl='git log --graph --date=short --pretty=format:"%Cgreen%h %cd %Cblue%cn %Creset%s"'
+alias gl='git log --graph --date=short --pretty="%x09%Cgreen%h %Creset%cd %Cblue%cn%x09%Creset%s%Cred%d"'
 alias gs='git status'
 alias g='git'
 alias gd='git diff'
 alias gdc='git diff --cached'
 alias gc='git commit -m'
 alias ga='git add'
+alias gb='git branch'
