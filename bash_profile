@@ -7,6 +7,7 @@ umask 022
 export PATH=/usr/local/bin:$PATH
 export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
 export PATH=/opt/april/bin/:/opt/go/bin:$PATH
+export PATH=$HOME/pear/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/lib/flex_sdk_3/bin:$PATH
 export PATH=/opt/local/bin:$PATH
@@ -14,6 +15,8 @@ export PATH=/opt/local/bin:$PATH
 
 #for textmate bundle
 export LC_TYPE=en_US.UTF-8
+
+if [ -s /opt/local/apache2/bin ] ; then export PATH=/opt/local/apache2/bin:$PATH; fi
 
 if [ -s $HOME/.rvm/scripts/rvm ] ; then . $HOME/.rvm/scripts/rvm ; fi
 
