@@ -1,5 +1,29 @@
 scriptencoding utf-8
 
+set nocompatible           " vi機能優先しない
+filetype off
+
+set rtp+=~/.vim/vundle.git/
+call vundle#rc()
+
+Bundle 'clones/vim-l9'
+Bundle 'FuzzyFinder'
+Bundle 'Shougo/neocomplcache'
+Bundle 'thinca/vim-quickrun'
+
+"ruby
+Bundle 'vim-ruby/vim-ruby'
+Bundle 'tpope/vim-rails'
+Bundle 'tpope/vim-cucumber'
+
+
+"js
+Bundle 'JavaScript-syntax'
+Bundle 'itspriddle/vim-javascript-indent'
+
+"php
+Bundle 'cakephp.vim'
+
 filetype indent plugin on
 
 " -------------------
@@ -48,7 +72,7 @@ set list
 set listchars=tab:»\
 set mouse=a
 set nobackup
-set nocompatible           " vi機能優先しない
+"set nocompatible           " vi機能優先しない
 set noexpandtab            " tab -> space 置換なし
 set number
 set ruler
@@ -207,8 +231,8 @@ silent s/&amp;/\&/eg
 " -------------------
 " plugin
 " -------------------
-call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+"call pathogen#runtime_append_all_bundles()
+"call pathogen#helptags()
 
 "vim-ruby
 "Rubyのオムニ補完を設定(ft-ruby-omni)
