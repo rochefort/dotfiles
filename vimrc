@@ -16,7 +16,6 @@ Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
 
-
 "js
 Bundle 'JavaScript-syntax'
 Bundle 'itspriddle/vim-javascript-indent'
@@ -160,17 +159,26 @@ nnoremap <unique> <silent> tm :<C-u>tabnew<CR>:tabmove<CR>:FufMruFile!<CR>
 " filetype
 " -------------------
 autocmd FileType c,cpp,perl set ts=4 sw=4 expandtab
+autocmd FileType java set ts=2 sw=2 expandtab
 autocmd FileType python set ts=4 sw=4 expandtab
 autocmd FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
 autocmd FileType html set filetype=xhtml
 autocmd FileType javascript set ts=4 sw=4 expandtab
-autocmd BufNewFile *.js set ft=javascript
+autocmd BufNewFile,BufRead *.js set ft=javascript
+autocmd BufNewFile,BufRead *.java set ft=java
 
 " for rails
 autocmd BufNewFile,BufRead app/**/*.rhtml set fenc=utf-8
 autocmd BufNewFile,BufRead app/**/*.erb set fenc=utf-8
 autocmd BufNewFile,BufRead app/**/*.haml set fenc=utf-8
 autocmd BufNewFile,BufRead app/**/*.rb set fenc=utf-8
+
+" for java
+:let java_highlight_all=1
+:let java_highlight_debug=1
+:let java_space_errors=1
+:let java_highlight_functions=1
+
 
 " -------------------
 " autocmd
