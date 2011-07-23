@@ -4,6 +4,7 @@ date
 #export LANG=ja_JP.UTF-8
 
 PAGER=less 
+export LESS="-R"
 export LESSCHARSET=utf-8
 
 export CLICOLOR=1
