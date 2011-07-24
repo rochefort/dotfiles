@@ -55,10 +55,12 @@ PROMPT_COMMAND=showexit
 #function refe_more() {
 #  refe $@ | more
 #}
+
 function wman() {
  url="man -w ${1} | sed 's#.*\(${1}.\)\([[:digit:]]\).*\$#http://developer.apple.com/documentation/Darwin/Reference/ManPages/man\2/\1\2.html#'"
  open `eval $url`
 }
+
 function mountAndroid {
   hdiutil attach ~/lib/android.dmg  -mountpoint /Volumes/android; 
 }
@@ -68,4 +70,9 @@ function mountAndroid {
 #        cd $1
 #    fi
 #}
+
+function git() {
+  hub "$@"
+}
 #--------------------------------------
+
