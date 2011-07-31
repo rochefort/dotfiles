@@ -3,9 +3,10 @@
 alias rm='rm -i'
 alias mv='mv -i'
 alias cp='cp -i'
-alias ls='ls -vF'
-alias ll='ls -al'
 alias l='ls'
+alias ls='ls -vF'
+alias ll='ls -l'
+alias la='ll -a'
 alias h='history'
 alias fcd='source fcd.sh'
 alias memo='more ~/memo.txt'
@@ -20,6 +21,7 @@ alias sgi32="sudo env ARCHFLAGS='-Os -arch i386 -fno-common' gem install --no-ri
 alias sgi64="sudo env ARCHFLAGS='-Os -arch x86_64 -fno-common' gem install --no-ri --no-rdoc"
 alias sgi="sgi64"
 #alias gl='git log --graph --date=short --pretty=format:"%Cgreen%h %cd %Cblue%cn %Creset%s"'
+alias git='hub'
 alias gl='git log --graph --date=short --pretty="%x09%Cgreen%h %Creset%cd %Cblue%cn%x09%Creset%s%Cred%d"'
 alias gs='git status'
 alias g='git'
