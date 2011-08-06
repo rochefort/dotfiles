@@ -312,7 +312,15 @@ let g:neocomplcache_enable_underbar_completion = 1
 
 let g:NeoComplCache_EnableSkipCompletion = 0
 if !exists('g:NeoComplCache_OmniPatterns')
-	let g:NeoComplCache_OmniPatterns = {}
+  let g:NeoComplCache_OmniPatterns = {}
 endif
 let g:NeoComplCache_OmniPatterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+"" snippets
+"let g:NeoComplCache_SnippetsDir = '~/.vim/snippets'
+"imap <C-k>     <Plug>(neocomplcache_snippets_expand)
+"smap <C-k>     <Plug>(neocomplcache_snippets_expand)
+"inoremap <expr><C-g>     neocomplcache#undo_completion()
+"inoremap <expr><C-l>     neocomplcache#complete_common_string()
+imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
