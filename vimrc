@@ -68,6 +68,8 @@ set clipboard+=autoselect      " visual selection -> clipboard
 set complete+=k                " 辞書ファイルからの単語補完
 set cursorline
 set display=lastline
+set foldmethod=syntax
+set foldlevel=100
 set formatoptions+=r
 set laststatus=2
 set list
