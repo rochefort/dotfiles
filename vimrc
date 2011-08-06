@@ -263,11 +263,20 @@ function! Rspec ()
     exe '!ruby script/spec -fn -c %:p -l '.line('.')
     "exe '!rake spec SPEC="'.expand('%:p').'" RSPECOPTS="-fs -c -l '.line('.').'"'
   else
-    :!spec -fn -c %
+    :!rspec -fn -c %
   endif
 endfunction
 
 au BufRead,BufNewFile *_spec.rb :command! Rs :call Rspec()
+
+"rspec on quickrun
+let g:quickrun_config = {}
+let g:quickrun_config['ruby.rspec'] = {'command':'rspec'}
+
+augroup UjihisaRSpec
+  autocmd!
+    autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+augroup END
 
 "fuzzy_finder
 autocmd FileType fuf nmap <C-c> <ESC>
