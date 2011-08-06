@@ -76,7 +76,6 @@ set list
 set listchars=tab:»\
 set mouse=a
 set nobackup
-"set nocompatible           " vi機能優先しない
 set noexpandtab            " tab -> space 置換なし
 set number
 set ruler
@@ -196,8 +195,9 @@ autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
 "前回表示箇所を記憶
-autocmd BufWritePost * mkview
-autocmd BufReadPost * loadview
+"autocmd BufWritePost * mkview
+"autocmd BufReadPost * loadview
+
 " -------------------
 " function
 " -------------------
@@ -297,8 +297,8 @@ let g:fuf_file_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
 "inoremap <buffer> <expr> . smartchr#loop('.', '<%=  %><LEFT><LEFT><LEFT>', '<%  %><LEFT><LEFT><LEFT>')
 
 "rsense
-let g:rsenseHome = "/Users/snoozer/lib/rsense-0.3"
-let g:rsenseUseOmniFunc = 1
+"let g:rsenseHome = "/Users/snoozer/lib/rsense-0.3"
+"let g:rsenseUseOmniFunc = 1
 
 "neocomplcache
 let g:neocomplcache_enable_at_startup = 1
