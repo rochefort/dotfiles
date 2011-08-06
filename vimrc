@@ -23,6 +23,9 @@ Bundle 'itspriddle/vim-javascript-indent'
 "php
 Bundle 'cakephp.vim'
 
+"git
+Bundle 'motemen/git-vim'
+
 filetype indent plugin on
 
 " -------------------
