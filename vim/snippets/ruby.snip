@@ -1,29 +1,54 @@
+snippet     cod
+abbr        encoding
+    # -*- coding: UTF-8 -*-
+    `expand('')`
+alias       cod enc
+
+snippet     she
+abbr        shebung
+    #!/usr/bin/env/ ruby
+    `expand('')`
+
 snippet     des
 abbr        describe do
     describe '${1}' do
         ${2}
     end
+    `expand('')`
 
 snippet     con
 abbr        context do
     context '${1}' do
         ${2}
     end
+    `expand('')`
 
 snippet     bef
 abbr        before do
     before do
         ${1}
     end
+    `expand('')`
 
 snippet     it
 abbr        it do
     it '${1}' do
         ${2}
     end
+    `expand('')`
 
 snippet     cla
 abbr        class end
     class ${1:name}
       ${2}
     end
+    `expand('')`
+
+snippet     req
+abbr        require
+    require '${1}'
+
+snippet     ass
+abbr        assert_equal
+    assert_equal 
+
