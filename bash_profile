@@ -5,6 +5,7 @@ if [ -f ~/.bash_private ]; then . ~/.bash_private; fi
 umask 022
 
 export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
 export PATH=$HOME/.gem/ruby/1.8/bin:$PATH
 export PATH=/opt/april/bin/:/opt/go/bin:$PATH
 export PATH=$HOME/pear/bin:$PATH
