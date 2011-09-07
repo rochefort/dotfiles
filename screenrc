@@ -1,0 +1,48 @@
+## エスケープキーの設定
+escape ^Gg
+
+## ビジュアルベルを無効
+vbell off
+
+## ステータス行の設定
+hardstatus alwayslastline "[%02c] %`%-w%{=b bw}%n %t%{-}%+w"
+
+## スタートアップ時メッセージ無効
+startup_message off
+
+### 自動でデタッチする
+#autodetach on
+#
+### スクロール行を 10,240行
+#defscrollback 10240
+#
+### ^T U で UTF-8 / ^T E で EUC-JP を切り替え
+#bind U eval "encoding utf-8" "!!!echo 'export LANG=ja_JP.UTF-8'"
+#bind E eval "encoding euc" "!!!echo 'export LANG=ja_JP.EUC-JP'"
+#
+
+bind h eval 'focus left'
+bind j eval 'focus down'
+bind k eval 'focus up'
+bind l eval 'focus right'
+
+hardstatus string "%?%h%:%t (screen #%n on %H)%?"
+caption always "%{=r dd}%-Lw%40L>%?%F%{=b dR}%:[%? %n%f %t %?%F%{-}%:]%?%+Lw %?%F%-024=GNU Screen of Git master%:%=%?"
+sorendition "+rb .G"
+
+#hardstatus alwayslastline "%`%-w%{=b bw}%n %t%{-}%+w"
+#hardstatus alwayslastline "%H[%n] [%w]"
+
+shell -$SHELL
+
+# screen 起動時に画面を上下二分割する
+vert_split
+focus down
+split
+focus bottom
+screen 2
+focus up
+screen 1
+focus top
+screen 0
+
