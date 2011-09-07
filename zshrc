@@ -52,11 +52,15 @@ setopt share_history
 setopt hist_no_store
 setopt hist_reduce_blanks
 
+# core size
+limit coredumpsize 0
+
 # other configuration
 setopt auto_pushd
 setopt correct
 setopt list_packed
 setopt nolistbeep
+setopt nobeep
 
 #bindkey -v
 bindkey -e
@@ -67,3 +71,5 @@ bindkey -e
 export PATH=$HOME/bin/vim/bin:$PATH
 export PATH=$HOME/lib/android-sdk-mac_x86/tools:$PATH
 
+# cpanm
+export PERL_CPANM_OPT="--local-lib=~/lib/perl5"

@@ -19,6 +19,7 @@ Bundle 'tpope/vim-cucumber'
 "js
 Bundle 'JavaScript-syntax'
 Bundle 'itspriddle/vim-javascript-indent'
+Bundle 'kchmck/vim-coffee-script'
 
 "php
 Bundle 'cakephp.vim'
@@ -41,6 +42,7 @@ highlight StatusLine term=NONE cterm=NONE ctermfg=black ctermbg=white
 highlight TabLine     cterm=none ctermfg=black ctermbg=white
 highlight TabLineSel  cterm=bold ctermfg=white ctermbg=black
 highlight TabLineFill ctermfg=white
+highlight Search ctermbg=green
 " ポップアップの配色
 highlight Pmenu ctermbg=darkblue
 highlight PmenuSel ctermbg=darkred
@@ -62,6 +64,7 @@ set ambiwidth=double " 記号(※とか△とか)入力時にカーソルがズ�
 set autoindent
 set autoread                   " 外部のエディタで編集中のファイルが変更されたら再読み込み
 set backspace=indent,eol,start
+set nobackup
 set backupdir=~/.Trash
 set clipboard+=autoselect      " visual selection -> clipboard
 "set clipboard+=unnamed         " yank -> clipboard
@@ -128,7 +131,7 @@ imap <C-k> <Up>
 imap <C-h> <Left>
 imap <C-l> <Right>
 
-nnoremap <C-p> :set paste<CR>i
+nnoremap <C-p> :set paste<CR>o
 nmap <silent> <C-N> :noh<CR>
 
 
@@ -138,6 +141,11 @@ imap <C-o> <C-x><C-o>
 "imap [ []<LEFT>
 "imap ( ()<LEFT>
 "imap <silent> <C-p> <Space>=> <RIGHT>
+
+nmap <Space>b :ls<CR>:buffer
+nmap <Space>f :edit .<CR>
+nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
+nmap <Space>V :Vexplore!<CR><CR>
 
 "Tabs
 "nnoremap <Space>t t
@@ -162,7 +170,7 @@ nnoremap <unique> <silent> tm :<C-u>tabnew<CR>:tabmove<CR>:FufMruFile!<CR>
 " -------------------
 " filetype
 " -------------------
-autocmd FileType c,cpp,perl set ts=4 sw=4 expandtab
+autocmd FileType c,cpp,perl,sh set ts=4 sw=4 expandtab
 autocmd FileType java set ts=2 sw=2 expandtab
 autocmd FileType python set ts=4 sw=4 expandtab
 autocmd FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
@@ -315,6 +323,10 @@ if !exists('g:NeoComplCache_OmniPatterns')
   let g:NeoComplCache_OmniPatterns = {}
 endif
 let g:NeoComplCache_OmniPatterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
+
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+inoremap <expr><C-e> neocomplcache#cancel_popup()
+
 
 "" snippets
 "let g:NeoComplCache_SnippetsDir = '~/.vim/snippets'
