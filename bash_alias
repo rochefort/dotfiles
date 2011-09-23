@@ -36,3 +36,4 @@ alias diff='colordiff'
 #alias screen='/usr/local/bin/screen'
 alias s='screen'
 alias r='rails'
+alias less="${HOME}/bin/vim/share/vim/vim73/macros/less.sh"
