@@ -3,13 +3,17 @@ scriptencoding utf-8
 set nocompatible           " vi機能優先しない
 filetype off
 
-set rtp+=~/.vim/vundle.git/
+set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
+Bundle 'gmarik/vundle'
 
 Bundle 'clones/vim-l9'
 Bundle 'FuzzyFinder'
 Bundle 'Shougo/neocomplcache'
 Bundle 'thinca/vim-quickrun'
+Bundle 'thinca/vim-ambicmd'
+Bundle 'surround.vim'
+Bundle 'css_color.vim'
 
 "ruby
 Bundle 'vim-ruby/vim-ruby'
@@ -65,7 +69,7 @@ set autoindent
 set autoread                   " 外部のエディタで編集中のファイルが変更されたら再読み込み
 set backspace=indent,eol,start
 set nobackup
-set backupdir=~/.Trash
+"set backupdir=~/.Trash
 set clipboard+=autoselect      " visual selection -> clipboard
 "set clipboard+=unnamed         " yank -> clipboard
 set complete+=k                " 辞書ファイルからの単語補完
@@ -131,7 +135,8 @@ imap <C-k> <Up>
 imap <C-h> <Left>
 imap <C-l> <Right>
 
-nnoremap <C-p> :set paste<CR>o
+nnoremap <C-p> :set paste<CR>i
+"nnoremap <S-p> :set paste<CR>i
 nmap <silent> <C-N> :noh<CR>
 
 
@@ -174,10 +179,11 @@ autocmd FileType c,cpp,perl,sh set ts=4 sw=4 expandtab
 autocmd FileType java set ts=2 sw=2 expandtab
 autocmd FileType python set ts=4 sw=4 expandtab
 autocmd FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
-autocmd FileType html set filetype=xhtml
-autocmd FileType javascript set ts=4 sw=4 expandtab
+autocmd FileType html set ts=2 sw=2 expandtab ft=xhtml
+autocmd FileType javascript set ts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.js set ft=javascript
 autocmd BufNewFile,BufRead *.java set ft=java
+autocmd BufNewFile,BufRead *.ejs set ft=html
 
 " for rails
 autocmd BufNewFile,BufRead app/**/*.rhtml set fenc=utf-8
@@ -206,6 +212,10 @@ autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 "autocmd BufWritePost * mkview
 "autocmd BufReadPost * loadview
 
+augroup SkeletonAu
+  autocmd!
+  autocmd BufNewFile *.html 0r $HOME/.vim/templates/skel.html
+augroup End
 " -------------------
 " function
 " -------------------
@@ -281,9 +291,9 @@ au BufRead,BufNewFile *_spec.rb :command! Rs :call Rspec()
 let g:quickrun_config = {}
 let g:quickrun_config['ruby.rspec'] = {'command':'rspec'}
 
-augroup UjihisaRSpec
+augroup MyRSpec
   autocmd!
-    autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
 
 "fuzzy_finder
@@ -335,3 +345,8 @@ inoremap <expr><C-e> neocomplcache#cancel_popup()
 "inoremap <expr><C-g>     neocomplcache#undo_completion()
 "inoremap <expr><C-l>     neocomplcache#complete_common_string()
 imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+
+
+" ambicmd
+cnoremap bi<CR> :BundleInstall
+
