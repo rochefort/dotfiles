@@ -208,14 +208,14 @@ autocmd InsertLeave * set nopaste
 autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
-"前回表示箇所を記憶
-"autocmd BufWritePost * mkview
-"autocmd BufReadPost * loadview
+" 前回表示位置を記憶
+autocmd BufRead * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 augroup SkeletonAu
   autocmd!
   autocmd BufNewFile *.html 0r $HOME/.vim/templates/skel.html
 augroup End
+
 " -------------------
 " function
 " -------------------
