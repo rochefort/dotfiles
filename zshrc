@@ -64,8 +64,9 @@ setopt nobeep
 
 #bindkey -v
 bindkey -e
-#bindkey "^[f" emacs-forward-word
-#bindkey "^[b" emacs-backward-word
+bindkey "^F" forward-word
+bindkey "^B" backward-word
+
 
 # path
 export PATH=$HOME/bin/vim/bin:$PATH
