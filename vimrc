@@ -18,6 +18,8 @@ Bundle 'thinca/vim-quickrun'
 Bundle 'thinca/vim-ambicmd'
 Bundle 'surround.vim'
 Bundle 'css_color.vim'
+Bundle 'mattn/zencoding-vim'
+"Bundle 'nathanaelkane/vim-indent-guides'
 
 "ruby
 Bundle 'vim-ruby/vim-ruby'
@@ -358,6 +360,6 @@ inoremap <expr><C-e> neocomplcache#cancel_popup()
 imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 
 
-" ambicmd
+"ambicmd
 cnoremap bi<CR> :BundleInstall
 
