@@ -1,12 +1,16 @@
 scriptencoding utf-8
 
-set nocompatible           " vi機能優先しない
+" -------------------
+" Bundler
+" -------------------
+set nocompatible
 filetype off
 
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 
+"misc
 Bundle 'clones/vim-l9'
 Bundle 'FuzzyFinder'
 Bundle 'Shougo/neocomplcache'
@@ -37,13 +41,14 @@ filetype indent plugin on
 " color
 " -------------------
 syntax on
+"colorscheme railscasts
 
 highlight LineNr ctermfg=lightgrey   " 行番号
 highlight NonText ctermfg=darkgrey
 highlight Folded ctermfg=blue
 highlight SpecialKey cterm=underline ctermfg=darkgrey " 特殊記号
 highlight StatusLine term=NONE cterm=NONE ctermfg=black ctermbg=white
-highlight TabLine     cterm=none ctermfg=black ctermbg=white
+highlight TabLine     cterm=NONE ctermfg=black ctermbg=white
 highlight TabLineSel  cterm=bold ctermfg=white ctermbg=black
 highlight TabLineFill ctermfg=white
 highlight Search ctermbg=green
@@ -139,14 +144,14 @@ nnoremap <C-p> :set paste<CR>i
 "nnoremap <S-p> :set paste<CR>i
 nmap <silent> <C-N> :noh<CR>
 
-
-" 補完
+"補完
 imap <C-o> <C-x><C-o>
 "imap { {}<LEFT>
 "imap [ []<LEFT>
 "imap ( ()<LEFT>
 "imap <silent> <C-p> <Space>=> <RIGHT>
 
+"Buffer
 nmap <Space>b :ls<CR>:buffer
 nmap <Space>f :edit .<CR>
 nmap <Space>v :vsplit<CR><C-w><C-w>:ls<CR>:buffer
@@ -160,6 +165,7 @@ nnoremap <silent> tc :<C-u>tabnew<CR>:tabmove<CR>
 nnoremap <silent> tk :<C-u>tabclose<CR>
 nnoremap <silent> tn :<C-u>tabnext<CR>
 nnoremap <silent> tp :<C-u>tabprevious<CR>
+
 "fuzzyfinder
 "nnoremap <Space>f f
 "nnoremap <Space>F F
@@ -185,13 +191,13 @@ autocmd BufNewFile,BufRead *.js set ft=javascript
 autocmd BufNewFile,BufRead *.java set ft=java
 autocmd BufNewFile,BufRead *.ejs set ft=html
 
-" for rails
+"rails
 autocmd BufNewFile,BufRead app/**/*.rhtml set fenc=utf-8
 autocmd BufNewFile,BufRead app/**/*.erb set fenc=utf-8
 autocmd BufNewFile,BufRead app/**/*.haml set fenc=utf-8
 autocmd BufNewFile,BufRead app/**/*.rb set fenc=utf-8
 
-" for java
+"java
 :let java_highlight_all=1
 :let java_highlight_debug=1
 :let java_space_errors=1
@@ -201,14 +207,14 @@ autocmd BufNewFile,BufRead app/**/*.rb set fenc=utf-8
 " -------------------
 " autocmd
 " -------------------
-" Insert mode抜けたら nopaste
+"Insert mode抜けたら nopaste
 autocmd InsertLeave * set nopaste
 
-" 自動的に QuickFix リストを表示する
+"自動的に QuickFix リストを表示する
 autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
 autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
-" 前回表示位置を記憶
+"前回表示位置を記憶
 autocmd BufRead * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
 augroup SkeletonAu
@@ -338,7 +344,7 @@ inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-e> neocomplcache#cancel_popup()
 
 
-"" snippets
+"snippets
 "let g:NeoComplCache_SnippetsDir = '~/.vim/snippets'
 "imap <C-k>     <Plug>(neocomplcache_snippets_expand)
 "smap <C-k>     <Plug>(neocomplcache_snippets_expand)
