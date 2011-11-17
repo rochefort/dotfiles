@@ -57,6 +57,11 @@ highlight Pmenu ctermbg=darkblue
 highlight PmenuSel ctermbg=darkred
 highlight PmenuSbar ctermbg=darkblue
 
+" disable blod font
+"if !has('gui_running')
+"    set t_Co=8 t_md=
+"endif
+
 " -------------------
 " encoding
 " -------------------
