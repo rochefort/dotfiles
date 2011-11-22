@@ -74,5 +74,23 @@ function mountAndroid {
 function git() {
   hub "$@"
 }
+
+# svn diff
+# usage: sdr file
+#        sdr file rev
+function sdr {
+  local rev;
+  local file;
+  if [ $# = 1 ]; then
+    file=$1
+    #rev=$(svn ls -v $file)
+    rev=$(svn ls -v $file | awk '{print $1}')
+  else
+    rev=$1
+    file=$2
+  fi
+  local bef_rev=$(expr $rev - 1)
+  svn diff -r $bef_rev:$rev $file
+}
 #--------------------------------------
 
