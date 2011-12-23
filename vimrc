@@ -14,17 +14,27 @@ Bundle 'gmarik/vundle'
 Bundle 'clones/vim-l9'
 Bundle 'FuzzyFinder'
 Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/vimfiler'
+"Bundle 'Shougo/vimshell'
+"Bundle 'Shougo/vimproc'
 Bundle 'thinca/vim-quickrun'
 Bundle 'thinca/vim-ambicmd'
 Bundle 'surround.vim'
 Bundle 'css_color.vim'
 Bundle 'mattn/zencoding-vim'
 "Bundle 'nathanaelkane/vim-indent-guides'
+Bundle 'project.tar.gz'
+Bundle 'unite.vim'
+Bundle 'vim-jp/vimdoc-ja'
+
+"colorscheme
+"Bundle 'billw.vim'
 
 "ruby
 Bundle 'vim-ruby/vim-ruby'
 Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
+Bundle 'astashov/vim-ruby-debugger'
 
 "js
 Bundle 'JavaScript-syntax'
@@ -43,7 +53,21 @@ filetype indent plugin on
 " color
 " -------------------
 syntax on
-"colorscheme railscasts
+if has('gui_macvim')
+  set showtabline=2
+  set imdisable
+  set transparency=10
+  set antialias
+  set guifont=Monaco:h13
+  "colorscheme billw
+  "colorscheme railscasts
+  colorscheme macvim
+endif
+
+if has("gui_running")
+  set fuoptions=maxvert,maxhorz
+  au GUIEnter * set fullscreen
+endif
 
 highlight LineNr ctermfg=lightgrey   " 行番号
 highlight NonText ctermfg=darkgrey
@@ -59,7 +83,7 @@ highlight Pmenu ctermbg=darkblue
 highlight PmenuSel ctermbg=darkred
 highlight PmenuSbar ctermbg=darkblue
 
-" disable blod font
+" disable bold font
 "if !has('gui_running')
 "    set t_Co=8 t_md=
 "endif
@@ -90,9 +114,11 @@ set display=lastline
 set foldmethod=syntax
 set foldlevel=100
 set formatoptions+=r
+set helplang=en,ja
 set laststatus=2
 set list
 set listchars=tab:»\
+"set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 set mouse=a
 set nobackup
 set noexpandtab            " tab -> space 置換なし
@@ -185,6 +211,9 @@ nnoremap <unique> <silent> tb :<C-u>tabnew<CR>:tabmove<CR>:FufBuffer!<CR>
 nnoremap <unique> <silent> tf :<C-u>tabnew<CR>:tabmove<CR>:FufFile! <C-r>=expand('#:~:.')[:-1-len(expand('#:~:.:t'))]<CR><CR>
 nnoremap <unique> <silent> tm :<C-u>tabnew<CR>:tabmove<CR>:FufMruFile!<CR>
 
+"ctags
+nnoremap <C-]><C-]> <C-t>
+
 " -------------------
 " filetype
 " -------------------
@@ -228,6 +257,10 @@ augroup SkeletonAu
   autocmd!
   autocmd BufNewFile *.html 0r $HOME/.vim/templates/skel.html
 augroup End
+
+" 相対パスを設定
+autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
+
 
 " -------------------
 " function
@@ -350,6 +383,11 @@ let g:NeoComplCache_OmniPatterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-e> neocomplcache#cancel_popup()
 
+" Define keyword.
+if !exists('g:neocomplcache_keyword_patterns')
+    let g:neocomplcache_keyword_patterns = {}
+endif
+let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 "snippets
 "let g:NeoComplCache_SnippetsDir = '~/.vim/snippets'
@@ -362,4 +400,13 @@ imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>
 
 "ambicmd
 cnoremap bi<CR> :BundleInstall
+cnoremap bu<CR> :BundleInstall!
+
+"indent-guids
+"let g:indent_guides_enable_on_vim_startup = 1
+"let g:indent_guides_color_change_percent = 30
+"let g:indent_guides_guide_size = 1
+""set background=dark
+"hi IndentGuidesOdd  ctermbg=grey
+"hi IndentGuidesEven ctermbg=darkgrey
 
