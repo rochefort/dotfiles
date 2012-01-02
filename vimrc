@@ -107,7 +107,7 @@ set backspace=indent,eol,start
 set nobackup
 "set backupdir=~/.Trash
 set clipboard+=autoselect      " visual selection -> clipboard
-"set clipboard+=unnamed         " yank -> clipboard
+set clipboard+=unnamed         " yank -> clipboard
 set complete+=k                " 辞書ファイルからの単語補完
 set cursorline
 set display=lastline
@@ -213,6 +213,13 @@ nnoremap <unique> <silent> tm :<C-u>tabnew<CR>:tabmove<CR>:FufMruFile!<CR>
 
 "ctags
 nnoremap <C-]><C-]> <C-t>
+
+"rails-vim
+nnoremap :rv :Rview
+nnoremap :rc :Rcontroller
+nnoremap :rs :Rspec
+nnoremap :rm :Rmodel
+
 
 " -------------------
 " filetype
