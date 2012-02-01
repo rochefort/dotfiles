@@ -74,3 +74,7 @@ export PATH=$HOME/lib/android-sdk-mac_x86/tools:$PATH
 
 # cpanm
 export PERL_CPANM_OPT="--local-lib=~/lib/perl5"
+
+
+# function
+d () { open dict:///"$@" ;say "$@" }
