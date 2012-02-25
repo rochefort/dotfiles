@@ -68,10 +68,6 @@ bindkey "^F" forward-word
 bindkey "^B" backward-word
 
 
-# path
-export PATH=$HOME/bin/vim/bin:$PATH
-export PATH=$HOME/lib/android-sdk-mac_x86/tools:$PATH
-
 # cpanm
 export PERL_CPANM_OPT="--local-lib=~/lib/perl5"
 
