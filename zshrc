@@ -24,18 +24,24 @@ source ~/.git-completion.sh
 
 # prompt
 autoload -Uz vcs_info
-precmd() {
+zstyle ':vcs_info:git:*' stagedstr "+"
+zstyle ':vcs_info:git:*' unstagedstr "-" 
+zstyle ':vcs_info:git:*' formats ' %b%c%u'
+precmd(){
+    # display path to title bar
+    echo -n "\e]2;$(pwd)\a"
     psvar=()
     LANG=en_US.UTF-8 vcs_info
-    psvar[1]=$vcs_info_msg_0_
+    psvar[1]=${vcs_info_msg_0_}
 }
 #PROMPT="%{${fg[blue]}%}[%n@%m] %(!.#.$) %{${reset_color}%}"
 #PROMPT2="%{${fg[blue]}%}%_> %{${reset_color}%}"
 #SPROMPT="%{${fg[red]}%}correct: %R -> %r [nyae]? %{${reset_color}%}"
 #RPROMPT="%{${fg[blue]}%}[%~]%{${reset_color}%}"
-RPROMPT="%{$fg[cyan]%}%1v%~%{${reset_color}%}"
+#RPROMPT="%{$fg[cyan]%}%1v%~%{${reset_color}%}"
 
-PROMPT="%{${fg[cyan]}%}[%T %n@%m]%{${reset_color}%}%(!.#.$)%{${reset_color}%} "
+PROMPT="%{${fg[cyan]}%}[%T%1v]%{${reset_color}%}%(!.#.$)%{${reset_color}%} "
+#PROMPT=$'%2F%n@%m%f %3F%~%f %1v\n%(!.#.$) '
 #PROMPT=$'%2F%n@%m%f %3F%~%f%1v %# '
 #PROMPT="%/%% "
 #PROMPT2="%_%% "
@@ -74,3 +80,6 @@ export PERL_CPANM_OPT="--local-lib=~/lib/perl5"
 
 # function
 d () { open dict:///"$@" ;say "$@" }
+
+PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
+
