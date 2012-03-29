@@ -26,6 +26,11 @@ Bundle 'mattn/zencoding-vim'
 Bundle 'project.tar.gz'
 Bundle 'unite.vim'
 Bundle 'vim-jp/vimdoc-ja'
+"Bundle 'Source-Explorer-srcexpl.vim'
+"Bundle 'trinity.vim'
+"Bundle 'taglist.vim'
+"Bundle 'The-NERD-tree'
+
 
 "colorscheme
 "Bundle 'billw.vim'
@@ -215,10 +220,10 @@ nnoremap <unique> <silent> tm :<C-u>tabnew<CR>:tabmove<CR>:FufMruFile!<CR>
 nnoremap <C-]><C-]> <C-t>
 
 "rails-vim
-nnoremap :rv :Rview
-nnoremap :rc :Rcontroller
-nnoremap :rs :Rspec
-nnoremap :rm :Rmodel
+nnoremap :rv :Rview<CR>
+nnoremap :rc :Rcontroller<CR>
+nnoremap :rs :Rspec<CR>
+nnoremap :rm :Rmodel<CR>
 
 
 " -------------------
