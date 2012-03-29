@@ -1,14 +1,11 @@
 ## .bash_profile
-if [ -f ~/.bashrc ]; then . ~/.bashrc; fi
-if [ -f ~/.bash_private ]; then . ~/.bash_private; fi
 
 umask 022
-
+export PATH=$HOME/lib/android-sdk-mac_x86/tools:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
 export PATH=/opt/april/bin/:/opt/go/bin:$PATH
 export PATH=$HOME/bin/vim/bin:$PATH
-export PATH=$HOME/lib/android-sdk-mac_x86/tools:$PATH
 export PATH=$HOME/pear/bin:$PATH
 export PATH=$HOME/bin:$PATH
 export PATH=$HOME/lib/flex_sdk_3/bin:$PATH
@@ -18,12 +15,15 @@ export PATH=/opt/local/bin:$PATH
 #for textmate bundle
 export LC_TYPE=en_US.UTF-8
 
-if [ -s /opt/local/apache2/bin ] ; then export PATH=/opt/local/apache2/bin:$PATH; fi
+# load environment files
+load(){
+  [[ -f $1 ]] && source $1
+}
+load ~/.bashrc
+load ~/.bash_private
+load /opt/local/apache2/bin
+load $HOME/.rvm/scripts/rvm
+load /usr/local/etc/bash_completion.d/git-completion.bash # git-completion.bash
+load $HOME/.rvm/script/rvm
+load ~/.bash_alias          # if you use pushd/popd, you should load after rvm sourced
 
-if [ -s $HOME/.rvm/scripts/rvm ] ; then . $HOME/.rvm/scripts/rvm ; fi
-
-# after rvm sourced
-if [ -f ~/.bash_alias ]; then . ~/.bash_alias ; fi
-
-# git-completion.bash
-if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then . /usr/local/etc/bash_completion.d/git-completion.bash; fi
