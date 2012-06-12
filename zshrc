@@ -112,7 +112,8 @@ export PERL_CPANM_OPT="--local-lib=~/lib/perl5"
 
 
 # function
-d () { open dict:///"$@" ;say "$@" }
+d() { open dict:///"$@" ;say "$@" }
+git() { hub "$@" }
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 
