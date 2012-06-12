@@ -14,6 +14,8 @@ compinit
 #autoload predict-on
 #predict-on
 
+export EDITOR=mate
+
 setopt auto_list
 setopt auto_menu
 setopt auto_param_keys
