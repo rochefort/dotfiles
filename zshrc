@@ -116,6 +116,11 @@ export PERL_CPANM_OPT="--local-lib=~/lib/perl5"
 # function
 d() { open dict:///"$@" ;say "$@" }
 git() { hub "$@" }
+crontab() {
+  if [ $@ != "-r" ]; then
+    EDITOR=$HOME/bin/vim/bin/vim;/usr/bin/crontab $@
+  fi
+}
 
 PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
