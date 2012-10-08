@@ -111,6 +111,7 @@ set autoindent
 set autoread                   " 外部のエディタで編集中のファイルが変更されたら再読み込み
 set backspace=indent,eol,start
 set nobackup
+set backupskip=/tmp/*,/private/tmp/*
 "set backupdir=~/.Trash
 set clipboard+=autoselect      " visual selection -> clipboard
 set clipboard+=unnamed         " yank -> clipboard
