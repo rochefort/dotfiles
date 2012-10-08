@@ -22,8 +22,7 @@ load(){
 load ~/.bashrc
 load ~/.bash_private
 load /opt/local/apache2/bin
-load $HOME/.rvm/scripts/rvm
+#load $HOME/.rvm/scripts/rvm
 load /usr/local/etc/bash_completion.d/git-completion.bash # git-completion.bash
-load $HOME/.rvm/script/rvm
 load ~/.bash_alias          # if you use pushd/popd, you should load after rvm sourced
 
