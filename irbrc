@@ -15,10 +15,11 @@ begin
   unless rails_console?
     #require 'what_methods'
     require 'wirble'
-#    require 'hirb'       # after wirble
     Wirble.init
     Wirble.colorize
-#    Hirb.enable
+    require 'hirb' # after wirble
+    require 'hirb-unicode'
+    Hirb.enable
   end
 
   # --- added methods
@@ -30,7 +31,7 @@ begin
 
   # for rails script/console
   #ActiveRecord::Base.logger = Logger.new(stream)
-  if ENV.include?('RAILS_ENV') && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
+  if rails_console? && !Object.const_defined?('RAILS_DEFAULT_LOGGER')
     require 'logger'
     RAILS_DEFAULT_LOGGER = Logger.new(STDOUT)
   end
