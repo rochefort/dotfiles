@@ -14,7 +14,8 @@ compinit
 #autoload predict-on
 #predict-on
 
-export EDITOR=mate
+export EDITOR=subl
+#export EDITOR=mate
 
 setopt auto_list
 setopt auto_menu
@@ -27,7 +28,7 @@ source ~/.git-completion.sh
 # prompt
 #autoload -Uz vcs_info
 #zstyle ':vcs_info:git:*' stagedstr "+"
-#zstyle ':vcs_info:git:*' unstagedstr "-" 
+#zstyle ':vcs_info:git:*' unstagedstr "-"
 #zstyle ':vcs_info:git:*' formats ' %b%c%u'
 precmd(){
     # display path to title bar
