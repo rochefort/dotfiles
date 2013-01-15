@@ -129,3 +129,6 @@ PATH=$PATH:/Applications/SenchaSDKTools-2.0.0-beta3
 PATH=/usr/local/sbin:$PATH
 PATH=$HOME/bin/vim/bin:$PATH
 PATH=$HOME/bin:$PATH
+
+### Added by the Heroku Toolbelt
+export PATH="/usr/local/heroku/bin:$PATH"
