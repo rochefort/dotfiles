@@ -1,0 +1,12 @@
+# 横分割＆移動
+splitw -h -d
+selectp -R
+# 縦分割＆移動
+splitw -d
+selectp -D
+# 縦分割＆移動&時計表示
+splitw -d
+selectp -D
+clock-mode
+# 最初のpainに戻る
+selectp -L
