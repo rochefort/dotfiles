@@ -45,6 +45,7 @@ alias r='rails'
 alias be='bundle exec'
 alias m='/Applications/TextMate.app/Contents/SharedSupport/Support/bin/mate'
 alias re='rbenv'
+alias e='subl'
 
 # tmux
 if [ $SHLVL = 1 ]; then
