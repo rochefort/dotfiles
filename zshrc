@@ -123,6 +123,24 @@ crontab() {
   fi
 }
 
+makeIcon() {
+  if [ $# -eq 0 ]; then
+    echo "you should call with an argument as image file."
+    exit 1
+  fi
+  local file=$1
+  _makeIcon $file 72
+  _makeIcon $file 144
+}
+
+_makeIcon() {
+  local file=$1
+  local size=$2
+  local target="${size}-${file}"
+  cp $file $target
+  sips -Z $size $target
+}
+
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
 PATH=$PATH:/Applications/SenchaSDKTools-2.0.0-beta3
