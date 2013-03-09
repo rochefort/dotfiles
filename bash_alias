@@ -49,7 +49,6 @@ alias e='subl'
 
 # tmux
 if [ $SHLVL = 1 ]; then
-  alias tmux="tmux attach || tmux new-session \; source-file ~/.tmux.session"
-  alias tm='tmux'
+  alias tm="tmux attach || tmux new-session \; source-file ~/.tmux.session"
 fi
 
