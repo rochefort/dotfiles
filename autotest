@@ -7,7 +7,4 @@ Autotest.add_hook :initialize do |autotest|
   %w{.git .svn .hg .DS_Store ._* vendor tmp log doc}.each do |exception|
     autotest.add_exception(exception)
   end
-  autotest.add_mapping(/^spec\/requests\/.*_spec\.rb$/) do
-    autotest_files_matching(/^spec\/requests\/.*_spec\.rb$/)
-  end
 end
