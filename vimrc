@@ -14,7 +14,7 @@ Bundle 'gmarik/vundle'
 Bundle 'clones/vim-l9'
 Bundle 'FuzzyFinder'
 Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neocomplcache-snippets-complete'
+Bundle 'Shougo/neosnippet'
 Bundle 'Shougo/vimfiler'
 "Bundle 'Shougo/vimshell'
 "Bundle 'Shougo/vimproc'
@@ -409,8 +409,10 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 "smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 "inoremap <expr><C-g>     neocomplcache#undo_completion()
 "inoremap <expr><C-l>     neocomplcache#complete_common_string()
-imap <expr><TAB> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
-
+"<TAB>でスニペット補完
+if g:neocomplcache_enable_at_startup
+  imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+endif
 
 "ambicmd
 cnoremap bi<CR> :BundleInstall
