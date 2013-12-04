@@ -37,6 +37,6 @@ begin
   end
 
 rescue Exception => e
-  p e.message
-  p e.backtrace
+  puts e.message
+  puts e.backtrace
 end
