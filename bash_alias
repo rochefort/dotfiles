@@ -30,6 +30,7 @@ alias gls='git log --stat --pretty=format:"%C(yellow)%h %Cgreen%cr %Cblue%cn %Cr
 alias gs='git status'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias gdh='git diff HEAD'
 alias gc='git commit'
 alias gcm='git commit -m'
 alias gca='git commit -a -m'
@@ -40,12 +41,13 @@ alias javac='javac -J-Dfile.encoding=UTF8'
 alias java='java -Dfile.encoding=UTF8'
 alias diff='colordiff'
 #alias screen='/usr/local/bin/screen'
-alias s='screen'
+#alias s='screen'
 alias r='rails'
 alias be='bundle exec'
 alias m='/Applications/TextMate.app/Contents/SharedSupport/Support/bin/mate'
 alias re='rbenv'
 alias e='subl'
+alias xrb='xmpfilter'
 
 # tmux
 if [ $SHLVL = 1 ]; then
