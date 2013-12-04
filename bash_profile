@@ -26,3 +26,6 @@ load /opt/local/apache2/bin
 load /usr/local/etc/bash_completion.d/git-completion.bash # git-completion.bash
 load ~/.bash_alias          # if you use pushd/popd, you should load after rvm sourced
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
+[[ -s "/Users/trsw/.gvm/bin/gvm-init.sh" ]] && source "/Users/trsw/.gvm/bin/gvm-init.sh"
