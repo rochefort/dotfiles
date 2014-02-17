@@ -54,3 +54,9 @@ if [ $SHLVL = 1 ]; then
   alias tm="tmux attach || tmux new-session \; source-file ~/.tmux.session"
 fi
 
+# svn
+#alias svnrevertall="svn st | grep \"^M\" | awk '{print $2}' | xargs svn revert"
+#alias ss="svn st"
+#alias sss="ss | grep \"^M\" | sort"
+#alias sd="svn diff | less -r"
+#alias sl="svn log | less -r"
