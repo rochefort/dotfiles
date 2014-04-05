@@ -236,7 +236,7 @@ autocmd FileType java set ts=2 sw=2 expandtab
 autocmd FileType python set ts=4 sw=4 expandtab
 autocmd FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
 autocmd FileType html set ts=2 sw=2 expandtab ft=xhtml
-autocmd FileType javascript set ts=2 sw=2 expandtab
+autocmd FileType javascript,coffee set ts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.js set ft=javascript
 autocmd BufNewFile,BufRead *.java set ft=java
 autocmd BufNewFile,BufRead *.ejs set ft=html
@@ -252,7 +252,6 @@ autocmd BufNewFile,BufRead app/**/*.rb set fenc=utf-8
 :let java_highlight_debug=1
 :let java_space_errors=1
 :let java_highlight_functions=1
-
 
 " -------------------
 " autocmd
