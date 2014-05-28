@@ -38,8 +38,9 @@ Bundle 'vim-jp/vimdoc-ja'
 
 "ruby
 Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-rails'
 Bundle 'tpope/vim-cucumber'
+Bundle 'tpope/vim-endwise'
+Bundle 'tpope/vim-rails'
 Bundle 'astashov/vim-ruby-debugger'
 
 "js
