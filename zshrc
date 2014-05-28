@@ -143,6 +143,7 @@ _makeIcon() {
 
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
 export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
+export GOPATH=$HOME/go
 PATH=$PATH:/Applications/SenchaSDKTools-2.0.0-beta3
 PATH=/usr/local/sbin:$PATH
 PATH=/usr/local/bin:$PATH
@@ -150,6 +151,8 @@ PATH=$HOME/bin/vim/bin:$PATH
 PATH=$HOME/.composer/vendor/bin:$PATH
 PATH=$HOME/bin:$PATH
 PATH=$HOME/lib/class-dump-3.4:$PATH
+PATH=$PATH:/usr/local/Cellar/go/1.2.1/libexec/bin
+PATH=$PATH:$GOPATH/bin
 
 ### Added by the Heroku Toolbelt
 export PATH="/usr/local/heroku/bin:$PATH"
