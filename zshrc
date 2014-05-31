@@ -25,6 +25,20 @@ setopt auto_param_keys
 # /usr/local/etc/bash_completion.d/git-completion.bash
 source ~/.git-completion.sh
 
+# cdr
+autoload -Uz chpwd_recent_dirs cdr add-zsh-hook
+add-zsh-hook chpwd chpwd_recent_dirs
+zstyle ':chpwd:*' recent-dirs-max 5000
+zstyle ':chpwd:*' recent-dirs-default yes
+zstyle ':completion:*' recent-dirs-insert both
+
+# zaw
+source ~/src/zaw/zaw.zsh
+zstyle ':filter-select' case-insensitive true
+bindkey '^xb' zaw-cdr
+bindkey '^x^f' zaw-git-files
+bindkey '^x^r' zaw-history
+
 # prompt
 #autoload -Uz vcs_info
 #zstyle ':vcs_info:git:*' stagedstr "+"
