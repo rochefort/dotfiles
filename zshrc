@@ -144,9 +144,9 @@ crontab() {
 }
 
 #PATH=$PATH:$HOME/.rvm/bin # Add RVM to PATH for scripting
-export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
+#export SENCHA_SDK_TOOLS_2_0_0_BETA3=/Applications/SenchaSDKTools-2.0.0-beta3
 export GOPATH=$HOME/go
-PATH=$PATH:/Applications/SenchaSDKTools-2.0.0-beta3
+#PATH=$PATH:/Applications/SenchaSDKTools-2.0.0-beta3
 PATH=/usr/local/sbin:$PATH
 PATH=/usr/local/bin:$PATH
 PATH=$HOME/bin/vim/bin:$PATH
@@ -160,4 +160,4 @@ PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/heroku/bin:$PATH"
 
 #THIS MUST BE AT THE END OF THE FILE FOR GVM TO WORK!!!
-[[ -s "/Users/trsw/.gvm/bin/gvm-init.sh" ]] && source "/Users/trsw/.gvm/bin/gvm-init.sh"
+#[[ -s "/Users/trsw/.gvm/bin/gvm-init.sh" ]] && source "/Users/trsw/.gvm/bin/gvm-init.sh"
