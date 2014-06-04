@@ -51,6 +51,8 @@ alias e='subl'
 alias a='atom'
 alias xrb='xmpfilter'
 
+alias mongod='mongod --config /usr/local/etc/mongod.conf'
+
 # tmux
 if [ $SHLVL = 1 ]; then
   alias tm="tmux attach || tmux new-session \; source-file ~/.tmux.session"
