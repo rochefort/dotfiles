@@ -1,0 +1,51 @@
+# Ruby
+'.source.ruby':
+  '=>':
+    'prefix': '='
+    'body': ' => '
+
+  'magic comment':
+    'prefix': 'cod'
+    'body': '# -*- coding: utf-8 -*-'
+
+# Rails
+'.source.ruby.rails':
+  'belongs_to':
+    'prefix': 'bl'
+    'body': 'belongs_to :$1'
+
+# Rails(html), Ruby(html)
+'.text.html.ruby, .text.html.erb':
+  'form_for':
+    'prefix': 'ff'
+    'body': '<%= form_for($1) do |f| %>\n\t$2\n<% end %>'
+
+  'end':
+    'prefix': 'end'
+    'body': '<% end %>'
+
+  'do block':
+    'prefix': 'do'
+    'body': '<% $1 do${2: |${3:variable}| }%>\n\t$0\n<% end %>'
+
+  'link_to':
+    'prefix': 'lt'
+    'body': "<%= link_to ${1:\'${2:name}\'}, ${3:path} %>"
+
+# RSpec
+'.source.ruby.rspec':
+  'describe (String)':
+    'prefix': 'des'
+    'body': "describe '${1:subject}' do\n  $0\nend"
+
+  'context':
+    'prefix': 'con'
+    'body': "context '${1:context}' do\n  $0\nend"
+
+  'it (does something)':
+    'prefix': 'it'
+    'body': "it '${1:does something}'${2: do\n  $0\nend}"
+
+  'before':
+    'prefix': 'bef'
+    'body': 'before${2:(${1::each})} do\n  $0\nend'

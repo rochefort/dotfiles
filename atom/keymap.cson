@@ -1,0 +1,4 @@
+'.editor:not(.mini)':
+  'ctrl-i': 'editor:auto-indent'
+  # 'ctrl-l': 'snippets:expand'
+  # 'tab': 'emmet:expand-abbre
