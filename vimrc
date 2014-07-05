@@ -1,58 +1,59 @@
 scriptencoding utf-8
 
 " -------------------
-" Bundler
+"  Vundle
 " -------------------
 set nocompatible
 filetype off
 
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'gmarik/Vundle.vim'
 
 "misc
-Bundle 'clones/vim-l9'
-Bundle 'FuzzyFinder'
-Bundle 'Shougo/neocomplcache'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/vimfiler'
-"Bundle 'Shougo/vimshell'
-"Bundle 'Shougo/vimproc'
-Bundle 'thinca/vim-quickrun'
-Bundle 'thinca/vim-ambicmd'
-Bundle 'surround.vim'
-Bundle 'css_color.vim'
-Bundle 'mattn/zencoding-vim'
-"Bundle 'nathanaelkane/vim-indent-guides'
-Bundle 'project.tar.gz'
-Bundle 'unite.vim'
-Bundle 'vim-jp/vimdoc-ja'
-"Bundle 'Source-Explorer-srcexpl.vim'
-"Bundle 'trinity.vim'
-"Bundle 'taglist.vim'
-"Bundle 'The-NERD-tree'
+Plugin 'clones/vim-l9'
+Plugin 'FuzzyFinder'
+Plugin 'Shougo/neocomplcache'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/vimfiler'
+"Plugin 'Shougo/vimshell'
+"Plugin 'Shougo/vimproc'
+Plugin 'thinca/vim-quickrun'
+Plugin 'thinca/vim-ambicmd'
+Plugin 'surround.vim'
+Plugin 'css_color.vim'
+Plugin 'mattn/zencoding-vim'
+"Plugin 'nathanaelkane/vim-indent-guides'
+Plugin 'project.tar.gz'
+Plugin 'unite.vim'
+Plugin 'vim-jp/vimdoc-ja'
+"Plugin 'Source-Explorer-srcexpl.vim'
+"Plugin 'trinity.vim'
+"Plugin 'taglist.vim'
+"Plugin 'The-NERD-tree'
 
 
 "colorscheme
-"Bundle 'billw.vim'
+"Plugin 'billw.vim'
 
 "ruby
-Bundle 'vim-ruby/vim-ruby'
-Bundle 'tpope/vim-cucumber'
-Bundle 'tpope/vim-endwise'
-Bundle 'tpope/vim-rails'
-Bundle 'astashov/vim-ruby-debugger'
+Plugin 'vim-ruby/vim-ruby'
+Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-endwise'
+Plugin 'tpope/vim-rails'
+Plugin 'astashov/vim-ruby-debugger'
 
 "js
-Bundle 'JavaScript-syntax'
-Bundle 'itspriddle/vim-javascript-indent'
-Bundle 'kchmck/vim-coffee-script'
-
-"php
-Bundle 'cakephp.vim'
+Plugin 'JavaScript-syntax'
+Plugin 'itspriddle/vim-javascript-indent'
+Plugin 'kchmck/vim-coffee-script'
 
 "git
-Bundle 'motemen/git-vim'
+Plugin 'motemen/git-vim'
+
+call vundle#end()
 
 filetype indent plugin on
 
@@ -415,8 +416,8 @@ if g:neocomplcache_enable_at_startup
 endif
 
 "ambicmd
-cnoremap bi<CR> :BundleInstall
-cnoremap bu<CR> :BundleInstall!
+cnoremap pi<CR> :PluginInstall
+cnoremap pu<CR> :PluginInstall!
 
 "indent-guids
 "let g:indent_guides_enable_on_vim_startup = 1
