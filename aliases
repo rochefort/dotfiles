@@ -18,9 +18,8 @@
 alias ls='ls -GF'
 alias h='history'
 alias fcd='source fcd.sh'
-#alias lessorg='less'
-#alias less="${HOME}/bin/vim/share/vim/vim73/macros/less.sh"
 #alias memo='lessorg ~/memo.txt'
+alias less='less -q'
 
 alias memo='less ~/memo.txt'
 alias vmemo='vim ~/memo.txt'
