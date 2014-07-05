@@ -4,9 +4,6 @@ gem: --no-rdoc --no-ri
 :benchmark: false
 :bulk_threshold: 1000
 :verbose: true
-:sources:
-- http://gems.rubyforge.org
-- http://gems.github.com
 :update_sources: true
 test_options:
   auto_test_on_install: true             # package のインストール時に自動でテストを行うか
