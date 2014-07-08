@@ -8,8 +8,12 @@
     prefix: 'cod'
     body: '# -*- coding: utf-8 -*-'
 
+  "require '..'":
+    prefix: 'req'
+    body: "require '$0'"
+
   'task :.. do .. end':
-    prefix: 'ta',
+    prefix: 'ta'
     body: 'task :$1 do\n\t$0\nend'
 
 # Rails
