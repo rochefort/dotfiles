@@ -8,6 +8,10 @@
     prefix: 'cod'
     body: '# -*- coding: utf-8 -*-'
 
+  'task :.. do .. end':
+    prefix: 'ta',
+    body: 'task :$1 do\n\t$0\nend'
+
 # Rails
 '.source.ruby.rails':
   'belongs_to':
