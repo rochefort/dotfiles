@@ -1,8 +1,5 @@
 scriptencoding utf-8
 
-" -------------------
-"  Vundle
-" -------------------
 set nocompatible
 filetype off
 
@@ -10,6 +7,13 @@ filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
+if $GOROOT != ''
+  set rtp+=$GOROOT/misc/vim
+endif
+
+" -------------------
+"  Vundle
+" -------------------
 Plugin 'gmarik/Vundle.vim'
 
 "misc
@@ -24,7 +28,8 @@ Plugin 'thinca/vim-quickrun'
 Plugin 'thinca/vim-ambicmd'
 Plugin 'surround.vim'
 Plugin 'css_color.vim'
-Plugin 'mattn/zencoding-vim'
+"Plugin 'mattn/zencoding-vim'
+Plugin 'mattn/emmet-vim'
 "Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'project.tar.gz'
 Plugin 'unite.vim'
@@ -254,6 +259,12 @@ autocmd BufNewFile,BufRead app/**/*.rb set fenc=utf-8
 :let java_highlight_debug=1
 :let java_space_errors=1
 :let java_highlight_functions=1
+
+"go
+" 保存時に :Fmt する
+autocmd BufWritePre *.go Fmt
+autocmd BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4
+autocmd FileType go compiler go
 
 " -------------------
 " autocmd
