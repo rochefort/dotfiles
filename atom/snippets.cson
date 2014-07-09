@@ -22,6 +22,10 @@
     prefix: 'bl'
     body: 'belongs_to :$1'
 
+  'render (text)':
+    prefix: 'rt'
+    body: "render text: '${1:text to render...}'"
+
 # Rails(html), Ruby(html)
 '.text.html.ruby, .text.html.erb':
   'do block':
