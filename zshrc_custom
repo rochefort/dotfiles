@@ -1,0 +1,46 @@
+# customize for prezto
+setopt no_beep
+source $HOME/.aliases
+eval "$(rbenv init -)"
+
+export PATH=/usr/local/bin:$PATH
+export PATH=/usr/local/sbin:$PATH
+# go
+# export GOROOT=`go env GOROOT`
+export GOROOT=/usr/local/opt/go/libexec
+export GOPATH=$HOME/.go
+export PATH=$PATH:$GOROOT/bin
+export PATH=$PATH:$GOPATH/bin
+
+# peco
+function peco-select-history() {
+    local tac
+    if which tac > /dev/null; then
+        tac="tac"
+    else
+        tac="tail -r"
+    fi
+    BUFFER=$(history -n 1 | \
+        eval $tac | \
+        peco --query "$LBUFFER")
+    CURSOR=$#BUFFER
+    zle clear-screen
+}
+zle -N peco-select-history
+bindkey '^r' peco-select-history
+
+# function
+d() { open dict:///"$@" ;say "$@" }
+git() { hub "$@" }
+crontab() {
+  if [ $@ != "-r" ]; then
+    EDITOR=$HOME/bin/vim/bin/vim;/usr/bin/crontab $@
+  fi
+}
+
+  if [ $# -eq 0 ]; then
+    echo "you should call with an argument as image file."
+    exit 1
+  fi
+}
+
