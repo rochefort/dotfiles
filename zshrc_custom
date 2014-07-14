@@ -30,6 +30,7 @@ zle -N peco-select-history
 bindkey '^r' peco-select-history
 
 # function
+c() { open $1 -a /Applications/CotEditor.app }
 d() { open dict:///"$@" ;say "$@" }
 git() { hub "$@" }
 crontab() {
