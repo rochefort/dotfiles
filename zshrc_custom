@@ -5,6 +5,10 @@ eval "$(rbenv init -)"
 
 export PATH=/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
+
+# php
+export PATH=$HOME/.composer/vendor/bin:$PATH
+
 # go
 # export GOROOT=`go env GOROOT`
 export GOROOT=/usr/local/opt/go/libexec
