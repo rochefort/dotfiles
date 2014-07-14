@@ -2,6 +2,9 @@
 setopt no_beep
 source $HOME/.aliases
 
+export EDITOR='atom'
+export VISUAL='vim'
+
 # rbenv
 eval "$(rbenv init -)"
 
