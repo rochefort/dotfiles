@@ -1,6 +1,8 @@
 # customize for prezto
 setopt no_beep
 source $HOME/.aliases
+
+# rbenv
 eval "$(rbenv init -)"
 
 export PATH=/usr/local/bin:$PATH
