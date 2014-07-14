@@ -37,10 +37,3 @@ crontab() {
     EDITOR=$HOME/bin/vim/bin/vim;/usr/bin/crontab $@
   fi
 }
-
-  if [ $# -eq 0 ]; then
-    echo "you should call with an argument as image file."
-    exit 1
-  fi
-}
-
