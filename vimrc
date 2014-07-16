@@ -192,6 +192,8 @@ nnoremap <C-p> :set paste<CR>i
 "nnoremap <S-p> :set paste<CR>i
 nmap <silent> <C-N> :noh<CR>
 
+inoremap <silent> jj <ESC>
+
 "補完
 imap <C-o> <C-x><C-o>
 "imap { {}<LEFT>
