@@ -2,6 +2,9 @@
 setopt no_beep
 source $HOME/.aliases
 
+# unalias for prezto
+unalias d
+
 export EDITOR='atom'
 export VISUAL='vim'
 
