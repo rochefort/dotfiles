@@ -247,6 +247,7 @@ autocmd FileType python set ts=4 sw=4 expandtab
 autocmd FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
 autocmd FileType html set ts=2 sw=2 expandtab ft=xhtml
 autocmd FileType javascript,coffee set ts=2 sw=2 expandtab
+autocmd FileType yaml set nowrap ts=2 sw=2 expandtab
 autocmd BufNewFile,BufRead *.js set ft=javascript
 autocmd BufNewFile,BufRead *.java set ft=java
 autocmd BufNewFile,BufRead *.ejs set ft=html
