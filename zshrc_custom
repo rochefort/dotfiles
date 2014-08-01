@@ -11,6 +11,9 @@ export VISUAL='vim'
 # rbenv
 eval "$(rbenv init -)"
 
+# node
+export NVM_DIR="/Users/trsw/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # php
 export PATH=$HOME/.composer/vendor/bin:$PATH
