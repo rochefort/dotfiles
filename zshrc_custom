@@ -11,8 +11,6 @@ export VISUAL='vim'
 # rbenv
 eval "$(rbenv init -)"
 
-export PATH=/usr/local/bin:$PATH
-export PATH=/usr/local/sbin:$PATH
 
 # php
 export PATH=$HOME/.composer/vendor/bin:$PATH
