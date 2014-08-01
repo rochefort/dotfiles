@@ -1,0 +1,27 @@
+# Limit lines to 80 characters.
+LineLength:
+  Enabled: false
+
+# Favor modifier if/unless usage when you have a single-line body.
+IfUnlessModifier:
+  Enabled: false
+
+# Favor modifier while/until usage when you have a single-line body.
+WhileUntilModifier:
+  Enabled: false
+
+# Missing top level class documentation comment.
+Style/Documentation:
+  Enabled: false
+
+Style/Next:
+  Enabled: false
+
+# Prefere reduce over inject.
+Style/CollectionMethods:
+    Enabled: false
+
+# Avoid the use of double negation (!!)
+Style/DoubleNegation:
+  Enabled: false
+
