@@ -12,7 +12,7 @@ export VISUAL='vim'
 eval "$(rbenv init -)"
 
 # node
-export NVM_DIR="/Users/trsw/.nvm"
+export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
 
 # php
