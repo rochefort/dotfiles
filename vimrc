@@ -132,7 +132,7 @@ set formatoptions+=r
 set helplang=en,ja
 set laststatus=2
 set list
-set listchars=tab:»\ 
+set listchars=tab:▸\ 
 "set listchars=tab:>-,trail:-,nbsp:%,extends:>,precedes:<
 set mouse=a
 set nobackup
