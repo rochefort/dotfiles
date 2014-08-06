@@ -45,7 +45,7 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
-# function
+# functions
 c() { open $1 -a /Applications/CotEditor.app }
 d() { open dict:///"$@" ;say "$@" }
 git() { hub "$@" }
@@ -56,5 +56,8 @@ crontab() {
 }
 jqs() {
   echo "$@" | jq . -C | less -R
+}
+pretty_html() {
+  echo $1 | ruby -rcgi -ne 'puts CGI.pretty $_'
 }
 
