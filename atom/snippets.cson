@@ -61,3 +61,21 @@
   'it (does something)':
     prefix: 'it'
     body: "it '${1:does something}'${2: do\n  $0\nend}"
+
+# PHP
+'.source.php':
+  'class …':
+    prefix: 'cla'
+    body: 'class ${1:ClassName}${2: extends ${3:AnotherClass}}\n{\n\t$4\n\tfunction ${5:__construct}(${6:argument})\n\t{\n\t\t${0}\n\t}\n}\n'
+
+  'protected':
+    prefix: 'pro'
+    body: 'protected $${0};'
+
+  'function …':
+    prefix: 'fun'
+    body: "${1:public }function ${2:FunctionName}(${3:$${4:value}${5:=''}})\n{\n\t${0}\n}"
+
+  'if …':
+    prefix: 'if'
+    body: 'if (${1:condition}) {\n\t$0\n}'
