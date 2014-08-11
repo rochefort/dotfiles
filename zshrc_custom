@@ -8,6 +8,9 @@ unalias d
 export EDITOR='atom'
 export VISUAL='vim'
 
+# hombrew-cask
+export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+
 # rbenv
 eval "$(rbenv init -)"
 

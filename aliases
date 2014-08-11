@@ -39,6 +39,7 @@ alias ga='git add'
 #alias gi='git issue'
 alias gb='hub browse'
 alias r='rails'
+alias cask='brew cask'
 
 #alias plagger='plagger -c /usr/local/plagger/config.yaml'
 #alias refe='refe_utf8'
