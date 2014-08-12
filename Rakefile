@@ -22,8 +22,6 @@ ARGF.each_line do |line|
 end
   EOS
   open("#{script_name}.rb", 'w') { |f| f.puts template }
-  `git init`
-
   puts "created #{challenge}."
   puts "cd #{challenge}"
 end
