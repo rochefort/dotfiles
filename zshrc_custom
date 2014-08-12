@@ -8,6 +8,9 @@ unalias d
 export EDITOR='atom'
 export VISUAL='vim'
 
+# add paths
+export PATH=$HOME/bin:$PATH
+
 # hombrew-cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
