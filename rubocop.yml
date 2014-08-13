@@ -1,27 +1,38 @@
-# Limit lines to 80 characters.
-LineLength:
-  Enabled: false
-
 # Favor modifier if/unless usage when you have a single-line body.
 IfUnlessModifier:
   Enabled: false
 
-# Favor modifier while/until usage when you have a single-line body.
-WhileUntilModifier:
+# Limit lines to 80 characters.
+LineLength:
   Enabled: false
 
-# Missing top level class documentation comment.
-Style/Documentation:
-  Enabled: false
-
-Style/Next:
+# Use nested module/class definitions instead of compact style.
+# NG: module Gem::Search
+Style/ClassAndModuleChildren:
   Enabled: false
 
 # Prefere reduce over inject.
 Style/CollectionMethods:
     Enabled: false
 
+# Missing top level class documentation comment.
+Style/Documentation:
+  Enabled: false
+
 # Avoid the use of double negation (!!)
 Style/DoubleNegation:
+  Enabled: false
+
+# Favor format over String#%.
+# NG: url = SEARCH_API % [query, n]
+Style/FormatString:
+  Enabled: false
+
+# Checks for trailing comma in parameter lists and literals.
+Style/TrailingComma:
+  Enabled: false
+
+# Favor modifier while/until usage when you have a single-line body.
+WhileUntilModifier:
   Enabled: false
 
