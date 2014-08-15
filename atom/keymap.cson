@@ -3,3 +3,6 @@
   'ctrl-r': 'window:run-package-specs'
   # 'ctrl-l': 'snippets:expand'
   # 'tab': 'emmet:expand-abbre
+
+".autocomplete-plus input.hidden-input":
+  "enter": "autocomplete-plus:confirm"
