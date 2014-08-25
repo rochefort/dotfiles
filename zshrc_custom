@@ -15,7 +15,9 @@ export PATH=$HOME/bin:$PATH
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # rbenv
-eval "$(rbenv init -)"
+if which rbenv > /dev/null; then
+    eval "$(rbenv init -)"
+fi
 
 # node
 export NVM_DIR="$HOME/.nvm"
