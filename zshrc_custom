@@ -1,6 +1,7 @@
 # customize for prezto
 setopt no_beep
 source $HOME/.aliases
+[ -s $HOME/.zshrc_private ] && source $HOME/.zshrc_private
 
 # unalias for prezto
 unalias d
