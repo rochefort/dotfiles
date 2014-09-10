@@ -28,6 +28,10 @@ Style/DoubleNegation:
 Style/FormatString:
   Enabled: false
 
+# %r-literals should be delimited by { and }
+Style/PercentLiteralDelimiters:
+  Enabled: false
+
 # Checks for trailing comma in parameter lists and literals.
 Style/TrailingComma:
   Enabled: false
