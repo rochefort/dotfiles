@@ -421,6 +421,7 @@ let g:neocomplcache_keyword_patterns['default'] = '\h\w*'
 
 "snippets
 "let g:NeoComplCache_SnippetsDir = '~/.vim/snippets'
+let g:neosnippet#snippets_directory = '~/.vim/snippets'
 "imap <C-k>     <Plug>(neocomplcache_snippets_expand)
 "smap <C-k>     <Plug>(neocomplcache_snippets_expand)
 "inoremap <expr><C-g>     neocomplcache#undo_completion()
