@@ -39,7 +39,7 @@ Plugin 'vim-jp/vimdoc-ja'
 "Plugin 'trinity.vim'
 "Plugin 'taglist.vim'
 "Plugin 'The-NERD-tree'
-
+Plugin 'scrooloose/syntastic'
 
 "colorscheme
 "Plugin 'billw.vim'
@@ -442,4 +442,8 @@ cnoremap pu<CR> :PluginInstall!
 ""set background=dark
 "hi IndentGuidesOdd  ctermbg=grey
 "hi IndentGuidesEven ctermbg=darkgrey
+
+" syntastic
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+let g:syntastic_ruby_checkers = ['rubocop']
 
