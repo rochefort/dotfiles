@@ -79,3 +79,8 @@
   'if …':
     prefix: 'if'
     body: 'if (${1:condition}) {\n\t$0\n}'
+
+  'log(cake)':
+    prefix: 'log'
+    body: '$this->log($0);'
+
