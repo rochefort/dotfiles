@@ -1,0 +1,9 @@
+// curly: ループや条件分岐の{}を省略しない
+// undef: 定義されていない変数の使用を禁止する
+// unused: 使っていない変数の宣言を禁止する
+{
+  "camelcase": true,
+  "curly": true,
+  "undef": true,
+  "unused": true
+}
