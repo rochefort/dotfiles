@@ -3,6 +3,9 @@ setopt no_beep
 source $HOME/.aliases
 [ -s $HOME/.zshrc_private ] && source $HOME/.zshrc_private
 
+bindkey "^F" forward-word
+bindkey "^B" backward-word
+
 # unalias for prezto
 unalias d
 
