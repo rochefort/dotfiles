@@ -13,6 +13,7 @@ begin
   require 'irb/completion'
   require 'pp'
   unless rails_console?
+    require 'awesome_print'
     #require 'what_methods'
     require 'wirble'
     Wirble.init
