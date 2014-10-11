@@ -444,6 +444,10 @@ cnoremap pu<CR> :PluginInstall!
 "hi IndentGuidesEven ctermbg=darkgrey
 
 " syntastic
-let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby'] }
+" activeだとバッファを保存するたびにsyntasticが走る
+let g:syntastic_mode_map = { 'mode': 'passive', 'active_filetypes': ['ruby', 'javascript'] }
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_javascript_checker = 'jshint'
 
+let g:syntastic_error_symbol='✗'
+let g:syntastic_warning_symbol='⚠'
