@@ -57,6 +57,14 @@ function peco-select-history() {
 zle -N peco-select-history
 bindkey '^r' peco-select-history
 
+# peco-lscd
+pcd() {
+  local dir="$( ls -1d * | peco )"
+  if [ ! -z "$dir" ]; then
+    cd "$dir"
+  fi
+}
+
 # functions
 c() { open $1 -a /Applications/CotEditor.app }
 d() { open dict:///"$@" ;say "$@" }
