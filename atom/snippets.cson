@@ -91,3 +91,7 @@
   '=>':
     prefix: '='
     body: '=>'
+
+  '$this->':
+    prefix: '$'
+    body: '$this->'
