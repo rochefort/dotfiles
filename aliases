@@ -40,6 +40,7 @@ alias ga='git add'
 alias gb='hub browse'
 alias r='rails'
 alias cask='brew cask'
+alias trend='g trend -n 10 && echo && g trend -l ruby -n 3 && echo && g trend -l objective-c -n 3 && echo && g trend -l php -n 3'
 
 #alias plagger='plagger -c /usr/local/plagger/config.yaml'
 #alias refe='refe_utf8'
