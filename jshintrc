@@ -4,6 +4,6 @@
 {
   "camelcase": true,
   "curly": true,
-  "undef": true,
+  "undef": false,
   "unused": true
 }
