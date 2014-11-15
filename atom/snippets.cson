@@ -84,3 +84,10 @@
     prefix: 'log'
     body: '$this->log($0);'
 
+  '->':
+    prefix: '-'
+    body: '->'
+
+  '=>':
+    prefix: '='
+    body: '=>'
