@@ -1,3 +1,4 @@
+puts "Ruby Version: #{RUBY_VERSION}"
 begin
   require 'hirb'
   require 'hirb-unicode'
