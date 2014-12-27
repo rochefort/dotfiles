@@ -40,7 +40,7 @@ alias ga='git add'
 alias gb='hub browse'
 alias r='rails'
 alias cask='brew cask'
-alias trend='g trend -n 10 && echo && g trend -l ruby -n 3 && echo && g trend -l objective-c -n 3 && echo && g trend -l php -n 3'
+alias trend='g trend -n 10 && echo && g trend -l ruby -n 5 && echo && g trend -l objective-c -n 3 && echo && g trend -l swift -n 3 && echo && g trend -l php -n 3'
 
 #alias plagger='plagger -c /usr/local/plagger/config.yaml'
 #alias refe='refe_utf8'
@@ -73,3 +73,17 @@ alias trend='g trend -n 10 && echo && g trend -l ruby -n 3 && echo && g trend -l
 #alias sss="ss | grep \"^M\" | sort"
 #alias sd="svn diff | less -r"
 #alias sl="svn log | less -r"
+
+# mysql
+function SELECT () {
+    mysql -uroot -e "SET NAMES utf8; SELECT $*"
+}
+
+
+function SHOW () {
+    mysql -uroot -e "SET NAMES utf8; SHOW $*"
+}
+
+alias SELECT="noglob SELECT"
+alias SHOW="noglob SHOW"
+
