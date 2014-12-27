@@ -1,4 +1,5 @@
 puts "Ruby Version: #{RUBY_VERSION}"
+Pry.config.color = true
 begin
   require 'hirb'
   require 'hirb-unicode'
