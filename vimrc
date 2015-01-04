@@ -1,3 +1,10 @@
+" -------------------
+" encoding
+" -------------------
+"enc/fencs/ffs
+set encoding=utf-8
+set fileencodings=utf-8,cp932,eucjp,iso2022jp
+set fileformats=unix,dos,mac
 scriptencoding utf-8
 
 filetype off
@@ -100,15 +107,6 @@ highlight PmenuSbar ctermbg=darkblue
 "if !has('gui_running')
 "    set t_Co=8 t_md=
 "endif
-
-" -------------------
-" encoding
-" -------------------
-"enc/fencs/ffs
-set encoding=utf-8
-set fileencodings=utf-8,cp932,eucjp,iso2022jp
-set fileformats=unix,dos,mac
-
 
 " -------------------
 " 基本設定
