@@ -342,14 +342,16 @@ autocmd BufRead,BufNewFile *_spec.rb :command! Rs :call Rspec()
 "rspec on quickrun
 let g:quickrun_config = {}
 let g:quickrun_config['ruby.rspec'] = {'command':'rspec'}
-
 augroup MyRSpec
     autocmd!
     autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
 
 "fuzzy_finder
-autocmd FileType fuf nmap <C-c> <ESC>
+augroup FuzzyFinder
+    autocmd!
+    autocmd FileType fuf nmap <C-c> <ESC>
+augroup END
 let g:fuf_patternSeparator = ' '
 let g:fuf_modesDisable = ['mrucmd']
 let g:fuf_mrufile_exclude = '\v\.DS_Store|\.git|\.swp|\.svn'
