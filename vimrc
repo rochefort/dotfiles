@@ -315,9 +315,6 @@ endif
 " -------------------
 " plugin
 " -------------------
-"call pathogen#runtime_append_all_bundles()
-"call pathogen#helptags()
-
 "vim-ruby
 "Rubyのオムニ補完を設定(ft-ruby-omni)
 let g:rubycomplete_buffer_loading = 1
