@@ -131,7 +131,6 @@ set virtualedit=block
 set visualbell t_vb=       " no beep
 set wildmode=list,full     " コマンドライン補完
 
-
 " -------------------
 " ステータスライン
 " -------------------
@@ -226,46 +225,46 @@ nnoremap :rm :Rmodel<CR>
 :let java_highlight_functions=1
 
 augroup MyAutoCmd
-  autocmd!
+    autocmd!
 
-  autocmd FileType c,cpp,perl,sh set ts=4 sw=4 expandtab
-  autocmd FileType java set ts=2 sw=2 expandtab
-  autocmd FileType python set ts=4 sw=4 expandtab
-  autocmd FileType vim,ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
-  autocmd FileType html set ts=2 sw=2 expandtab ft=xhtml
-  autocmd FileType javascript,coffee set ts=2 sw=2 expandtab
-  autocmd FileType yaml set nowrap ts=2 sw=2 expandtab
-  autocmd BufNewFile,BufRead *.js set ft=javascript
-  autocmd BufNewFile,BufRead *.java set ft=java
-  autocmd BufNewFile,BufRead *.ejs set ft=html
+    autocmd FileType c,cpp,perl,sh,vim set ts=4 sw=4 expandtab
+    autocmd FileType java set ts=2 sw=2 expandtab
+    autocmd FileType python set ts=4 sw=4 expandtab
+    autocmd FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
+    autocmd FileType html set ts=2 sw=2 expandtab ft=xhtml
+    autocmd FileType javascript,coffee set ts=2 sw=2 expandtab
+    autocmd FileType yaml set nowrap ts=2 sw=2 expandtab
+    autocmd BufNewFile,BufRead *.js set ft=javascript
+    autocmd BufNewFile,BufRead *.java set ft=java
+    autocmd BufNewFile,BufRead *.ejs set ft=html
 
-  "rails
-  autocmd BufNewFile,BufRead app/**/*.rhtml set fenc=utf-8
-  autocmd BufNewFile,BufRead app/**/*.erb set fenc=utf-8
-  autocmd BufNewFile,BufRead app/**/*.haml set fenc=utf-8
-  autocmd BufNewFile,BufRead app/**/*.rb set fenc=utf-8
+    "rails
+    autocmd BufNewFile,BufRead app/**/*.rhtml set fenc=utf-8
+    autocmd BufNewFile,BufRead app/**/*.erb set fenc=utf-8
+    autocmd BufNewFile,BufRead app/**/*.haml set fenc=utf-8
+    autocmd BufNewFile,BufRead app/**/*.rb set fenc=utf-8
 
-  "go
-  " 保存時に :Fmt する
-  autocmd BufWritePre *.go Fmt
-  autocmd BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4
-  autocmd FileType go compiler go
+    "go
+    " 保存時に :Fmt する
+    autocmd BufWritePre *.go Fmt
+    autocmd BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4
+    autocmd FileType go compiler go
 
-  " 相対パスを設定
-  autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
+    " 相対パスを設定
+    autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
 
-  "Insert mode抜けたら nopaste
-  autocmd InsertLeave * set nopaste
+    "Insert mode抜けたら nopaste
+    autocmd InsertLeave * set nopaste
 
-  "自動的に QuickFix リストを表示する
-  autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
-  autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
+    "自動的に QuickFix リストを表示する
+    autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
+    autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
-  "前回表示位置を記憶
-  autocmd BufRead * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    "前回表示位置を記憶
+    autocmd BufRead * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
 
-  " html
-  autocmd BufNewFile *.html 0r $HOME/.vim/templates/skel.html
+    " html
+    autocmd BufNewFile *.html 0r $HOME/.vim/templates/skel.html
 augroup End
 
 
@@ -292,7 +291,7 @@ endf
 "syntaxの有無をチェックし、新規バッファと新規読み込み時にハイライトさせる
 if has('syntax')
     syntax on
-        augroup invisible
+    augroup invisible
         autocmd! invisible
         "autocmd BufNew,BufRead * call SOLSpaceHilight()
         autocmd BufNew,BufRead * call JISX0208SpaceHilight()
@@ -329,24 +328,24 @@ let ruby_space_errors = 1
 let g:rails_level=4
 let g:rails_statusline=1
 function! Rspec ()
-  let rails_spec_pat = '\<spec/\(models\|controllers\|views\|helpers\)/.*_spec\.rb$'
-  if expand('%:p') =~ rails_spec_pat
-    exe '!ruby script/spec -fn -c %:p -l '.line('.')
-    "exe '!rake spec SPEC="'.expand('%:p').'" RSPECOPTS="-fs -c -l '.line('.').'"'
-  else
-    :!rspec -fn -c %
-  endif
+    let rails_spec_pat = '\<spec/\(models\|controllers\|views\|helpers\)/.*_spec\.rb$'
+    if expand('%:p') =~ rails_spec_pat
+        exe '!ruby script/spec -fn -c %:p -l '.line('.')
+        "exe '!rake spec SPEC="'.expand('%:p').'" RSPECOPTS="-fs -c -l '.line('.').'"'
+    else
+        :!rspec -fn -c %
+    endif
 endfunction
 
-au BufRead,BufNewFile *_spec.rb :command! Rs :call Rspec()
+autocmd BufRead,BufNewFile *_spec.rb :command! Rs :call Rspec()
 
 "rspec on quickrun
 let g:quickrun_config = {}
 let g:quickrun_config['ruby.rspec'] = {'command':'rspec'}
 
 augroup MyRSpec
-  autocmd!
-  autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
+    autocmd!
+    autocmd BufWinEnter,BufNewFile *_spec.rb set filetype=ruby.rspec
 augroup END
 
 "fuzzy_finder
@@ -383,7 +382,7 @@ let g:neocomplcache_enable_underbar_completion = 1
 
 let g:NeoComplCache_EnableSkipCompletion = 0
 if !exists('g:NeoComplCache_OmniPatterns')
-  let g:NeoComplCache_OmniPatterns = {}
+    let g:NeoComplCache_OmniPatterns = {}
 endif
 let g:NeoComplCache_OmniPatterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
@@ -405,7 +404,7 @@ let g:neosnippet#snippets_directory = '~/.vim/snippets'
 "inoremap <expr><C-l>     neocomplcache#complete_common_string()
 "<TAB>でスニペット補完
 if g:neocomplcache_enable_at_startup
-  imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
+    imap <expr><TAB> neosnippet#expandable() ? "\<Plug>(neosnippet_jump_or_expand)" : pumvisible() ? "\<C-n>" : "\<TAB>"
 endif
 
 "ambicmd
