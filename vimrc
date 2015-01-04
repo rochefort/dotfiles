@@ -77,7 +77,7 @@ if has('gui_macvim')
   colorscheme macvim
 endif
 
-if has("gui_running")
+if has('gui_running')
   set fuoptions=maxvert,maxhorz
   au GUIEnter * set fullscreen
 endif
@@ -312,7 +312,7 @@ function! TrailedSpaceHightlight()
     highlight TrailedSpace term=underline ctermbg=Red guibg=Red
 endf
 "syntaxの有無をチェックし、新規バッファと新規読み込み時にハイライトさせる
-if has("syntax")
+if has('syntax')
     syntax on
         augroup invisible
         autocmd! invisible
