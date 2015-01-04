@@ -63,7 +63,8 @@ Plugin 'itspriddle/vim-javascript-indent'
 Plugin 'kchmck/vim-coffee-script'
 
 "git
-Plugin 'motemen/git-vim'
+"Plugin 'motemen/git-vim'
+Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
@@ -299,17 +300,17 @@ if has('syntax')
     augroup END
 endif
 
-:function! HtmlEscape()
-silent s/&/\&amp;/eg
-silent s/</\&lt;/eg
-silent s/>/\&gt;/eg
-:endfunction
-
-:function! HtmlUnEscape()
-silent s/&lt;/</eg
-silent s/&gt;/>/eg
-silent s/&amp;/\&/eg
-:endfunction
+":function! HtmlEscape()
+"silent s/&/\&amp;/eg
+"silent s/</\&lt;/eg
+"silent s/>/\&gt;/eg
+":endfunction
+"
+":function! HtmlUnEscape()
+"silent s/&lt;/</eg
+"silent s/&gt;/>/eg
+"silent s/&amp;/\&/eg
+":endfunction
 
 " -------------------
 " plugin
