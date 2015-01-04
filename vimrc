@@ -73,21 +73,6 @@ filetype indent plugin on
 " color
 " -------------------
 syntax on
-if has('gui_macvim')
-  set showtabline=2
-  set imdisable
-  set transparency=10
-  set antialias
-  set guifont=Monaco:h13
-  "colorscheme billw
-  "colorscheme railscasts
-  colorscheme macvim
-endif
-
-if has('gui_running')
-  set fuoptions=maxvert,maxhorz
-  au GUIEnter * set fullscreen
-endif
 
 highlight LineNr ctermfg=lightgrey   " 行番号
 highlight NonText ctermfg=darkgrey
@@ -234,59 +219,54 @@ nnoremap :rc :Rcontroller<CR>
 nnoremap :rs :Rspec<CR>
 nnoremap :rm :Rmodel<CR>
 
-
-" -------------------
-" filetype
-" -------------------
-autocmd FileType c,cpp,perl,sh set ts=4 sw=4 expandtab
-autocmd FileType java set ts=2 sw=2 expandtab
-autocmd FileType python set ts=4 sw=4 expandtab
-autocmd FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
-autocmd FileType html set ts=2 sw=2 expandtab ft=xhtml
-autocmd FileType javascript,coffee set ts=2 sw=2 expandtab
-autocmd FileType yaml set nowrap ts=2 sw=2 expandtab
-autocmd BufNewFile,BufRead *.js set ft=javascript
-autocmd BufNewFile,BufRead *.java set ft=java
-autocmd BufNewFile,BufRead *.ejs set ft=html
-
-"rails
-autocmd BufNewFile,BufRead app/**/*.rhtml set fenc=utf-8
-autocmd BufNewFile,BufRead app/**/*.erb set fenc=utf-8
-autocmd BufNewFile,BufRead app/**/*.haml set fenc=utf-8
-autocmd BufNewFile,BufRead app/**/*.rb set fenc=utf-8
-
 "java
 :let java_highlight_all=1
 :let java_highlight_debug=1
 :let java_space_errors=1
 :let java_highlight_functions=1
 
-"go
-" 保存時に :Fmt する
-autocmd BufWritePre *.go Fmt
-autocmd BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4
-autocmd FileType go compiler go
-
-" -------------------
-" autocmd
-" -------------------
-"Insert mode抜けたら nopaste
-autocmd InsertLeave * set nopaste
-
-"自動的に QuickFix リストを表示する
-autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
-autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
-
-"前回表示位置を記憶
-autocmd BufRead * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
-
-augroup SkeletonAu
+augroup MyAutoCmd
   autocmd!
+
+  autocmd FileType c,cpp,perl,sh set ts=4 sw=4 expandtab
+  autocmd FileType java set ts=2 sw=2 expandtab
+  autocmd FileType python set ts=4 sw=4 expandtab
+  autocmd FileType vim,ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
+  autocmd FileType html set ts=2 sw=2 expandtab ft=xhtml
+  autocmd FileType javascript,coffee set ts=2 sw=2 expandtab
+  autocmd FileType yaml set nowrap ts=2 sw=2 expandtab
+  autocmd BufNewFile,BufRead *.js set ft=javascript
+  autocmd BufNewFile,BufRead *.java set ft=java
+  autocmd BufNewFile,BufRead *.ejs set ft=html
+
+  "rails
+  autocmd BufNewFile,BufRead app/**/*.rhtml set fenc=utf-8
+  autocmd BufNewFile,BufRead app/**/*.erb set fenc=utf-8
+  autocmd BufNewFile,BufRead app/**/*.haml set fenc=utf-8
+  autocmd BufNewFile,BufRead app/**/*.rb set fenc=utf-8
+
+  "go
+  " 保存時に :Fmt する
+  autocmd BufWritePre *.go Fmt
+  autocmd BufNewFile,BufRead *.go set sw=4 noexpandtab ts=4
+  autocmd FileType go compiler go
+
+  " 相対パスを設定
+  autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
+
+  "Insert mode抜けたら nopaste
+  autocmd InsertLeave * set nopaste
+
+  "自動的に QuickFix リストを表示する
+  autocmd QuickFixCmdPost make,grep,grepadd,vimgrep,vimgrepadd cwin
+  autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
+
+  "前回表示位置を記憶
+  autocmd BufRead * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+
+  " html
   autocmd BufNewFile *.html 0r $HOME/.vim/templates/skel.html
 augroup End
-
-" 相対パスを設定
-autocmd FileType html setlocal includeexpr=substitute(v:fname,'^\\/','','') | setlocal path+=;/
 
 
 " -------------------
