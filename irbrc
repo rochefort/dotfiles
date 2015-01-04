@@ -15,9 +15,9 @@ begin
   unless rails_console?
     require 'awesome_print'
     #require 'what_methods'
-    require 'wirble'
-    Wirble.init
-    Wirble.colorize
+    #require 'wirble'
+    #Wirble.init
+    #Wirble.colorize
     require 'hirb' # after wirble
     require 'hirb-unicode'
     Hirb.enable
