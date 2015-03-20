@@ -32,6 +32,12 @@ Style/FormatString:
 Style/Next:
   Enabled: false
 
+# Checks that the equals signs in parameter default assignments have or
+# don't have surrounding space depending on configuration.
+Style/SpaceAroundEqualsInParameterDefault:
+  StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-around-equals
+  Enabled: false
+
 # %r-literals should be delimited by { and }
 Style/PercentLiteralDelimiters:
   Enabled: false
