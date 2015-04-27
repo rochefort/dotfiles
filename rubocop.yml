@@ -6,6 +6,10 @@ IfUnlessModifier:
 LineLength:
   Enabled: false
 
+# Use only ascii symbols in comments.
+Style/AsciiComments:
+  Enabled: false
+
 # Use nested module/class definitions instead of compact style.
 # NG: module Gem::Search
 Style/ClassAndModuleChildren:
