@@ -1,9 +1,17 @@
-'.editor:not(.mini)':
+'.platform-darwin atom-text-editor:not([mini])':
   'ctrl-i': 'editor:auto-indent'
+
+'.editor:not(.mini)':
+  # 'ctrl-i': 'editor:auto-indent'
   'ctrl-r': 'window:run-package-specs'
+  'ctrl-shift-M': 'markdown-preview:toggle'
   # 'ctrl-l': 'snippets:expand'
   # 'tab': 'emmet:expand-abbre
 
 ".autocomplete-plus input.hidden-input":
   "enter": "autocomplete-plus:confirm"
   "tab": "autocomplete-plus:cancel"
+
+'atom-text-editor:not(mini).autocomplete-active':
+  'ctrl-k': 'core:move-up'
+  'ctrl-j': 'core:move-down'
