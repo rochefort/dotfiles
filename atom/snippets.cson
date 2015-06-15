@@ -95,3 +95,42 @@
   '$this->':
     prefix: '$'
     body: '$this->'
+
+# CodeIgniter
+  'if …':
+    'prefix': 'if'
+    'body': """
+      if (${1:condition})
+      {
+      \t${0:# code...}
+      }
+    """
+
+  "$this->input->post('')":
+    prefix: "post"
+    body: "$this->input->post('$1')"
+
+  "$this->load->model('')":
+    prefix: "lm"
+    body: "$this->load->model('$1');"
+
+  "$this->load->view('')":
+    prefix: "lv"
+    body: "$this->load->view('$1');"
+
+  "$this->load->":
+    prefix: "load"
+    body: "$this->load->$1;"
+
+  "'key' => 'value'":
+    prefix: "d"
+    body: "'${1:key}' => '${2:val}'"
+
+'.text.html.php':
+  '<? ;?>':
+    prefix: 's'
+    body: '<? $0?;>'
+
+  '<?=?>':
+    prefix: 's='
+    body: '<?=$0?>'
