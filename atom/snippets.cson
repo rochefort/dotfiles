@@ -126,6 +126,14 @@
     prefix: "d"
     body: "'${1:key}' => '${2:val}'"
 
+  "log_message('key', 'message')":
+    prefix: "log"
+    body: "log_message('${1:key}', '${2:message}');"
+
+  "log_message('info', '')":
+    prefix: "logi"
+    body: "log_message('info', '${1}');"
+
 '.text.html.php':
   '<? ;?>':
     prefix: 's'
