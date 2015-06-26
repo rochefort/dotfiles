@@ -96,6 +96,18 @@
     prefix: '$'
     body: '$this->'
 
+  'var_dump()':
+    prefix: 'v'
+    body: 'var_dump($0);'
+
+  'echo()':
+    prefix: 'e'
+    body: 'echo \'$0\';'
+
+  'print_r()':
+    prefix: 'e'
+    body: 'print_r($0);'
+
 # CodeIgniter
   'if …':
     'prefix': 'if'
