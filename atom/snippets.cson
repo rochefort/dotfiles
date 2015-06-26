@@ -105,7 +105,7 @@
     body: 'echo \'$0\';'
 
   'print_r()':
-    prefix: 'e'
+    prefix: 'pr'
     body: 'print_r($0);'
 
 # CodeIgniter
