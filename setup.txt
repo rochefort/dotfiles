@@ -1,0 +1,11 @@
+# setup
+DOTFILES_PATH=$HOME/github/dotfiles
+ln -s $DOTFILES_PATH/aliases .aliases
+ln -s $DOTFILES_PATH/gemrc .gemrc
+ln -s $DOTFILES_PATH/irbrc .irbrc
+ln -s $DOTFILES_PATH/pryrc .pryrc
+ln -s $DOTFILES_PATH/railsrc .railsrc
+ln -s $DOTFILES_PATH/rubocop.yml .rubocop.yml
+ln -s $DOTFILES_PATH/vimrc .vimrc
+ln -s $DOTFILES_PATH/zshrc_custom .zshrc_custom
+
