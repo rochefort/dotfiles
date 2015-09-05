@@ -1,22 +1,22 @@
 '.platform-darwin atom-text-editor:not([mini])':
   'ctrl-i': 'editor:auto-indent'
 
-'.atom-text-editor:not(.mini)':
+'atom-text-editor:not([mini])':
   # 'ctrl-i': 'atom-text-editor:auto-indent'
   'ctrl-r': 'window:run-package-specs'
   'ctrl-shift-M': 'markdown-preview:toggle'
   # 'ctrl-l': 'snippets:expand'
   # 'tab': 'emmet:expand-abbre
-  'ctrl-e': 'atom-text-editor:move-to-end-of-line'
+  'ctrl-e': 'editor:move-to-end-of-line'
   'ctrl-;': 'core:move-right'
-
-".autocomplete-plus input.hidden-input":
-  "enter": "autocomplete-plus:confirm"
-  "tab": "autocomplete-plus:cancel"
 
 'atom-text-editor:not(mini).autocomplete-active':
   'ctrl-k': 'core:move-up'
   'ctrl-j': 'core:move-down'
+
+".autocomplete-plus input.hidden-input":
+  "enter": "autocomplete-plus:confirm"
+  "tab": "autocomplete-plus:cancel"
 
 # 'atom-text-editor[data-grammar="YOUR GRAMMAR HERE"]:not([mini])':
 # 'atom-text-editor:not([mini])':
