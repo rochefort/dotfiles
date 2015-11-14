@@ -4,8 +4,7 @@ IRB.conf.update(
 )
 
 def rails_console?
-  ENV.include?('RAILS_ENV') or (defined?(Rails) and Rails.env)
-  #ENV.include?('RAILS_ENV') or (Rails && Rails.env)
+  ENV.include?('RAILS_ENV') or defined?(Rails.env)
 end
 
 begin
