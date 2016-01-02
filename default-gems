@@ -1,11 +1,12 @@
 bundler
 awesome_print
-cocoapods-search
 emot
 gem-search
+git-stars
 git-trend
 hirb
 hirb-unicode
+mygegegems
 pry
 pry-doc
 rails
