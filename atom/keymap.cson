@@ -9,7 +9,8 @@
   # 'ctrl-l': 'snippets:expand'
   # 'tab': 'emmet:expand-abbre
   'ctrl-e': 'editor:move-to-end-of-line'
-  'ctrl-;': 'core:move-right'
+  # 'ctrl-r': 'core:move-right'
+  # 'ctrl-h': 'core:move-left'
   'ctrl-k': 'core:move-up'
   'ctrl-j': 'core:move-down'
   'cmd-alt-l': 'editor:auto-indent'
