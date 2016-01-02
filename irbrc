@@ -12,14 +12,14 @@ begin
   require 'irb/completion'
   require 'pp'
   unless rails_console?
-    require 'awesome_print'
+    #require 'awesome_print'
     #require 'what_methods'
     #require 'wirble'
     #Wirble.init
     #Wirble.colorize
-    require 'hirb' # after wirble
-    require 'hirb-unicode'
-    Hirb.enable
+    #require 'hirb' # after wirble
+    #require 'hirb-unicode'
+    #Hirb.enable
   end
 
   # --- added methods
