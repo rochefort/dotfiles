@@ -165,10 +165,10 @@ nnoremap <M-j> <C-w>j
 nnoremap <M-k> <C-w>k
 nnoremap <M-l> <C-w>l
 
-imap <C-j> <Down>
-imap <C-k> <Up>
-imap <C-h> <Left>
-imap <C-l> <Right>
+inoremap <C-j> <Down>
+inoremap <C-k> <Up>
+inoremap <C-h> <Left>
+inoremap <C-l> <Right>
 
 nnoremap <C-p> :set paste<CR>i
 "nnoremap <S-p> :set paste<CR>i
@@ -386,7 +386,7 @@ if !exists('g:NeoComplCache_OmniPatterns')
 endif
 let g:NeoComplCache_OmniPatterns.ruby = '[^. *\t]\.\w*\|\h\w*::'
 
-inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+"inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-e> neocomplcache#cancel_popup()
 
 " Define keyword.
@@ -427,3 +427,4 @@ let g:syntastic_javascript_checker = 'jshint'
 
 let g:syntastic_error_symbol='✗'
 let g:syntastic_warning_symbol='⚠'
+
