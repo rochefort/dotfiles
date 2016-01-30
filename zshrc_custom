@@ -90,4 +90,6 @@ jqs() {
 pretty_html() {
   echo $1 | ruby -rcgi -ne 'puts CGI.pretty $_'
 }
-
+remove_xattr() {
+  xattr $1 | xargs -Iattr xattr -d attr $1
+}
