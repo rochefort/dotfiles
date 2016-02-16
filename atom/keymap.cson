@@ -1,16 +1,18 @@
 '.platform-darwin atom-text-editor:not([mini])':
   'ctrl-i': 'editor:auto-indent'
+  'ctrl-cmd-r': 'tree-view:reveal-active-file'
 
 'atom-text-editor:not([mini])':
+  # 'tab': 'snippets:expand'
   'ctrl-shift-c': 'editor:copy-path'
   # 'ctrl-i': 'atom-text-editor:auto-indent'
   'ctrl-r': 'window:run-package-specs'
   'ctrl-shift-M': 'markdown-preview:toggle'
   # 'ctrl-l': 'snippets:expand'
-  # 'tab': 'emmet:expand-abbre
+  # 'tab': 'emmet:expand-abbreviation-with-tab'
   'ctrl-e': 'editor:move-to-end-of-line'
-  # 'ctrl-r': 'core:move-right'
-  # 'ctrl-h': 'core:move-left'
+  'ctrl-h': 'core:move-left'
+  'ctrl-l': 'core:move-right'
   'ctrl-k': 'core:move-up'
   'ctrl-j': 'core:move-down'
   'cmd-alt-l': 'editor:auto-indent'
