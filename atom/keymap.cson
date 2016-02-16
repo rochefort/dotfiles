@@ -1,8 +1,7 @@
-'.platform-darwin atom-text-editor:not([mini])':
-  'ctrl-i': 'editor:auto-indent'
-  'ctrl-cmd-r': 'tree-view:reveal-active-file'
-
 'atom-text-editor:not([mini])':
+  'ctrl-i': 'editor:auto-indent'
+  'ctrl-f ctrl-f': 'tree-view:reveal-active-file'
+
   # 'tab': 'snippets:expand'
   'ctrl-shift-c': 'editor:copy-path'
   # 'ctrl-i': 'atom-text-editor:auto-indent'
@@ -12,14 +11,22 @@
   # 'tab': 'emmet:expand-abbreviation-with-tab'
   'ctrl-e': 'editor:move-to-end-of-line'
   'ctrl-h': 'core:move-left'
-  'ctrl-l': 'core:move-right'
-  'ctrl-k': 'core:move-up'
   'ctrl-j': 'core:move-down'
+  'ctrl-k': 'core:move-up'
+  'ctrl-l': 'core:move-right'
   'cmd-alt-l': 'editor:auto-indent'
 
-".autocomplete-plus input.hidden-input":
-  "enter": "autocomplete-plus:confirm"
-  "tab": "autocomplete-plus:cancel"
+'.tree-view':
+  'ctrl-f ctrl-f': 'tree-view:toggle-focus'
+  'ctrl-h': 'tree-view:collapse-directory'
+  'ctrl-j': 'core:move-down'
+  'ctrl-k': 'core:move-up'
+  'ctrl-l': 'tree-view:expand-directory'
+  'ctrl-l': 'tree-view:open-selected-entry'
+
+'.autocomplete-plus input.hidden-input':
+  'enter': 'autocomplete-plus:confirm'
+  'tab': 'autocomplete-plus:cancel'
 
 # 'atom-text-editor[data-grammar="YOUR GRAMMAR HERE"]:not([mini])':
 # 'atom-text-editor:not([mini])':
