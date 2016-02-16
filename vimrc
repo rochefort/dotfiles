@@ -83,7 +83,8 @@ highlight StatusLine term=NONE cterm=NONE ctermfg=black ctermbg=white
 highlight TabLine     cterm=NONE ctermfg=black ctermbg=white
 highlight TabLineSel  cterm=bold ctermfg=white ctermbg=black
 highlight TabLineFill ctermfg=white
-highlight Search ctermbg=green
+"highlight Search ctermbg=red
+highlight Search ctermfg=white ctermbg=magenta
 " ポップアップの配色
 highlight Pmenu ctermbg=darkblue
 highlight PmenuSel ctermbg=darkred
@@ -177,11 +178,11 @@ nmap <silent> <C-N> :noh<CR>
 inoremap <silent> jj <ESC>
 
 "補完
-imap <C-o> <C-x><C-o>
-"imap { {}<LEFT>
-"imap [ []<LEFT>
-"imap ( ()<LEFT>
-"imap <silent> <C-p> <Space>=> <RIGHT>
+"inoremap <C-o> <C-x><C-o>
+"inoremap { {}<LEFT>
+"inoremap [ []<LEFT>
+"inoremap ( ()<LEFT>
+"inoremap <silent> <C-p> <Space>=> <RIGHT>
 
 "Buffer
 nmap <Space>b :ls<CR>:buffer
