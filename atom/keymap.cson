@@ -1,28 +1,38 @@
-'atom-text-editor:not([mini])':
+'.platform-darwin atom-text-editor:not([mini])':
   'ctrl-i': 'editor:auto-indent'
-  'ctrl-f ctrl-f': 'tree-view:reveal-active-file'
-
-  # 'tab': 'snippets:expand'
   'ctrl-shift-c': 'editor:copy-path'
-  # 'ctrl-i': 'atom-text-editor:auto-indent'
-  'ctrl-r': 'window:run-package-specs'
   'ctrl-shift-M': 'markdown-preview:toggle'
-  # 'ctrl-l': 'snippets:expand'
-  # 'tab': 'emmet:expand-abbreviation-with-tab'
+
+  'f f': 'tree-view:reveal-active-file'
   'ctrl-e': 'editor:move-to-end-of-line'
   'ctrl-h': 'core:move-left'
   'ctrl-j': 'core:move-down'
   'ctrl-k': 'core:move-up'
   'ctrl-l': 'core:move-right'
-  'cmd-alt-l': 'editor:auto-indent'
 
-'.tree-view':
-  'ctrl-f ctrl-f': 'tree-view:toggle-focus'
+  # 'g g': 'core:move-to-top'
+  'ctrl-f': 'core:page-down'
+  'ctrl-b': 'core:page-up'
+  'ctrl-w': 'core:close'
+
+  'ctrl-=': 'fat-arrow:show'
+  'ctrl-r': 'window:run-package-specs'
+
+'.preview-pane':
+  'ctrl-j': 'core:move-down'
+  'ctrl-k': 'core:move-up'
+  'j': 'core:move-down'
+  'k': 'core:move-up'
+  'space': 'core:confirm'
+
+'.platform-darwin .tree-view':
+  'f f': 'tree-view:toggle-focus'
   'ctrl-h': 'tree-view:collapse-directory'
   'ctrl-j': 'core:move-down'
   'ctrl-k': 'core:move-up'
   'ctrl-l': 'tree-view:expand-directory'
   'ctrl-l': 'tree-view:open-selected-entry'
+  'l': 'tree-view:open-selected-entry'
 
 '.autocomplete-plus input.hidden-input':
   'enter': 'autocomplete-plus:confirm'
