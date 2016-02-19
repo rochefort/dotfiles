@@ -1,3 +1,7 @@
+'body':
+  'ctrl-[': 'pane:show-previous-item'
+  'ctrl-]': 'pane:show-next-item'
+
 '.platform-darwin atom-text-editor:not([mini])':
   'ctrl-i': 'editor:auto-indent'
   'ctrl-shift-c': 'editor:copy-path'
