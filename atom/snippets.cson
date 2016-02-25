@@ -1,3 +1,13 @@
+# JavaScript
+'.source.js':
+  'log':
+    prefix: 'l'
+    body: 'console.log($0);'
+
+  'table':
+    prefix: 't'
+    body: 'console.table($0);'
+
 # Ruby
 '.source.ruby':
   '=>':
