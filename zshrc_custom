@@ -12,6 +12,8 @@ unalias d
 export EDITOR='atom'
 export VISUAL='vim'
 
+export LC_ALL='ja_JP.UTF-8'
+
 # add paths
 export PATH=$HOME/bin:$PATH
 
