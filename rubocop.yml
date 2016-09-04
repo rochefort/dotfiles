@@ -1,56 +1,95 @@
-# Favor modifier if/unless usage when you have a single-line body.
-IfUnlessModifier:
-  Enabled: false
+AllCops:
+  TargetRubyVersion: 2.3
+  # RuboCop has a bunch of cops enabled by default. This setting tells RuboCop
+  # to ignore them, so only the ones explicitly set in this file are enabled.
+  DisabledByDefault: true
+  Exclude:
+    - '**/templates/**/*'
+    - '**/vendor/**/*'
 
-# Limit lines to 80 characters.
-LineLength:
-  Enabled: false
+# Prefer &&/|| over and/or.
+Style/AndOr:
+  Enabled: true
 
-# Use only ascii symbols in comments.
-Style/AsciiComments:
-  Enabled: false
+# Do not use braces for hash literals when they are the last argument of a
+# method call.
+Style/BracesAroundHashParameters:
+  Enabled: true
 
-# Use nested module/class definitions instead of compact style.
-# NG: module Gem::Search
-Style/ClassAndModuleChildren:
-  Enabled: false
+# Align `when` with `case`.
+Style/CaseIndentation:
+  Enabled: true
 
-# Prefere reduce over inject.
-Style/CollectionMethods:
-    Enabled: false
+# No extra empty lines.
+Style/EmptyLines:
+  Enabled: true
 
-# Missing top level class documentation comment.
-Style/Documentation:
-  Enabled: false
+# In a regular class definition, no empty lines around the body.
+Style/EmptyLinesAroundClassBody:
+  Enabled: true
 
-# Avoid the use of double negation (!!)
-Style/DoubleNegation:
-  Enabled: false
+# In a regular module definition, no empty lines around the body.
+Style/EmptyLinesAroundModuleBody:
+  Enabled: true
 
-# Favor format over String#%.
-# NG: url = SEARCH_API % [query, n]
-Style/FormatString:
-  Enabled: false
+# Use Ruby >= 1.9 syntax for hashes. Prefer { a: :b } over { :a => :b }.
+Style/HashSyntax:
+  Enabled: true
 
-# Use `next` to skip iteration instead of a condition at the end.
-Style/Next:
-  Enabled: false
+# Method definitions after `private` or `protected` isolated calls need one
+# extra level of indentation.
+Style/IndentationConsistency:
+  Enabled: true
+  EnforcedStyle: rails
 
-# Checks that the equals signs in parameter default assignments have or
-# don't have surrounding space depending on configuration.
-Style/SpaceAroundEqualsInParameterDefault:
-  StyleGuide: https://github.com/bbatsov/ruby-style-guide#spaces-around-equals
-  Enabled: false
+# Two spaces, no tabs (for indentation).
+Style/IndentationWidth:
+  Enabled: true
 
-# %r-literals should be delimited by { and }
-Style/PercentLiteralDelimiters:
-  Enabled: false
+# Defining a method with parameters needs parentheses.
+Style/MethodDefParentheses:
+  Enabled: true
 
-# Checks for trailing comma in parameter lists and literals.
-Style/TrailingComma:
-  Enabled: false
+# Use `foo {}` not `foo{}`.
+Style/SpaceBeforeBlockBraces:
+  Enabled: true
 
-# Favor modifier while/until usage when you have a single-line body.
-WhileUntilModifier:
-  Enabled: false
+# Use `foo { bar }` not `foo {bar}`.
+Style/SpaceInsideBlockBraces:
+  Enabled: true
+
+# Use `{ a: 1 }` not `{a:1}`.
+Style/SpaceInsideHashLiteralBraces:
+  Enabled: true
+
+# Check quotes usage according to lint rule below.
+Style/StringLiterals:
+  Enabled: true
+  EnforcedStyle: double_quotes
+
+# Detect hard tabs, no hard tabs.
+Style/Tab:
+  Enabled: true
+
+# Blank lines should not have any spaces.
+Style/TrailingBlankLines:
+  Enabled: true
+
+# No trailing whitespace.
+Style/TrailingWhitespace:
+  Enabled: true
+
+# Use quotes for string literals when they are enough.
+Style/UnneededPercentQ:
+  Enabled: true
+
+# Align `end` with the matching keyword or starting expression except for
+# assignments, where it should be aligned with the LHS.
+Lint/EndAlignment:
+  Enabled: true
+  AlignWith: variable
+
+# Use my_method(my_arg) not my_method( my_arg ) or my_method my_arg.
+Lint/RequireParentheses:
+  Enabled: true
 
