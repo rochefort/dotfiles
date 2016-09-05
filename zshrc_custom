@@ -7,7 +7,7 @@ bindkey "^F" forward-word
 bindkey "^B" backward-word
 
 # unalias for prezto
-unalias d
+unalias d 2>/dev/null
 
 export EDITOR='atom'
 export VISUAL='vim'
