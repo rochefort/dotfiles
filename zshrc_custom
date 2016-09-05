@@ -41,6 +41,12 @@ export GOPATH=$HOME/.go
 export PATH=$PATH:$GOROOT/bin
 export PATH=$PATH:$GOPATH/bin
 
+# android
+export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
+
+# google app engine
+PATH=$PATH:$HOME/lib/google_appengine/
+
 # peco
 function peco-select-history() {
     local tac
