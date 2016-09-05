@@ -7,7 +7,7 @@
   'ctrl-shift-c': 'editor:copy-path'
   'ctrl-shift-M': 'markdown-preview:toggle'
 
-  'f f': 'tree-view:reveal-active-file'
+  'ctrl-f ctrl-f': 'tree-view:reveal-active-file'
   'ctrl-e': 'editor:move-to-end-of-line'
   'ctrl-h': 'core:move-left'
   'ctrl-j': 'core:move-down'
@@ -30,7 +30,7 @@
   'space': 'core:confirm'
 
 '.platform-darwin .tree-view':
-  'f f': 'tree-view:toggle-focus'
+  'ctrl-f ctrl-f': 'tree-view:toggle-focus'
   'ctrl-h': 'tree-view:collapse-directory'
   'ctrl-j': 'core:move-down'
   'ctrl-k': 'core:move-up'
