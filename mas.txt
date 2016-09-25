@@ -1,0 +1,24 @@
+mas install 512464723 # Alinof Timer
+mas install 406056744 # Evernote
+mas install 409183694 # Keynote
+mas install 639944780 # LightBlue
+mas install 428834068 # YoruFukurou
+mas install 408981381 # iPhoto
+mas install 425424353 # The Unarchiver
+mas install 425955336 # Skitch
+mas install 682658836 # GarageBand
+mas install 896624060 # Kobito
+mas install 907364780 # Pomodoro One
+mas install 494803304 # WiFi Explorer
+mas install 409203825 # Numbers
+mas install 497799835 # Xcode
+mas install 696977615 # Capo
+mas install 409201541 # Pages
+mas install 408981434 # iMovie
+mas install 603544000 # PDF Encrypt
+mas install 715768417 # Microsoft Remote Desktop
+mas install 1024640650#  CotEditor
+mas install 418357707 # CocoaPacketAnalyzer
+mas install 973134470 # Pomodoro Time
+mas install 458034879 # Dash
+
