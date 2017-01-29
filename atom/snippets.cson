@@ -1,3 +1,13 @@
+# CSS
+'.source.css':
+  'comment block':
+    'prefix': 'cm'
+    'body': """
+    /* --------------------------------
+     * $0
+     * -------------------------------- */
+    """
+
 # JavaScript
 '.source.js':
   'log':
