@@ -40,7 +40,7 @@ local notVimBindingApps = {
   "Atom", "CotEditor", "iTerm", "Google Chrome", "Night Owl"
 }
 
-local function handleGlobalAppEvent(name, event, app)
+function handleGlobalAppEvent(name, event, app)
   if event == hs.application.watcher.activated then
     -- hs.alert(name)
     if hasValue(notVimBindingApps, name) then
@@ -51,7 +51,7 @@ local function handleGlobalAppEvent(name, event, app)
   end
 end
 
-local appsWatcher = hs.application.watcher.new(handleGlobalAppEvent)
+appsWatcher = hs.application.watcher.new(handleGlobalAppEvent)
 appsWatcher:start()
 
 ---------------------------------------------------------
@@ -137,5 +137,5 @@ function reloadConfig(files)
     hs.reload()
   end
 end
-local myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
+myWatcher = hs.pathwatcher.new(os.getenv("HOME") .. "/.hammerspoon/", reloadConfig):start()
 hs.alert.show("Config loaded")
