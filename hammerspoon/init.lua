@@ -37,7 +37,7 @@ local vimBinding = {
 --   "Alfred 3", "Dash", "Evernote"
 -- }
 local notVimBindingApps = {
-  "Atom", "CotEditor", "iTerm", "Google Chrome"
+  "Atom", "CotEditor", "iTerm", "Google Chrome", "Night Owl"
 }
 
 local function handleGlobalAppEvent(name, event, app)
