@@ -73,10 +73,52 @@ appsWatcher:start()
 ---------------------------------------------------------
 -- Evernote
 ---------------------------------------------------------
-hs.hotkey.bind({'shift', 'ctrl'}, 'L', function()
+hs.hotkey.bind({'shift', 'ctrl'}, 'T', function()
   local url = 'evernote:///view/233068343/s8/fcb637cb-e67b-42bb-88b9-8cb1e6e68a72/fcb637cb-e67b-42bb-88b9-8cb1e6e68a72/'
   hs.urlevent.openURLWithBundle(url, 'com.evernote.Evernote')
 end)
+
+-- Macros
+local delay = 10000
+local lateDelay = 100000
+local function moveLineDown()
+  return function()
+    hs.eventtap.keyStroke({'cmd'}, 'right', delay)
+    hs.eventtap.keyStroke({}, 'right', delay)
+    hs.eventtap.keyStroke({}, 'delete', delay)
+    hs.eventtap.keyStroke({'shift', 'cmd'}, 'left', lateDelay)
+    hs.eventtap.keyStroke({'cmd',}, 'X', lateDelay)
+    hs.eventtap.keyStroke({}, 'down', delay)
+    hs.eventtap.keyStroke({'cmd'}, 'V', delay)
+    hs.eventtap.keyStroke({}, 'return', delay)
+    hs.eventtap.keyStroke({}, 'delete', delay)
+    hs.eventtap.keyStroke({}, 'left', delay)
+  end
+end
+
+local function moveLineUp()
+  return function()
+    hs.eventtap.keyStroke({'cmd'}, 'left', delay)
+    hs.eventtap.keyStroke({}, 'delete', delay)
+    hs.eventtap.keyStroke({'shift', 'cmd'}, 'left', lateDelay)
+    hs.eventtap.keyStroke({'cmd',}, 'X', lateDelay)
+    hs.eventtap.keyStroke({}, 'down', delay)
+    hs.eventtap.keyStroke({'cmd'}, 'V', delay)
+    hs.eventtap.keyStroke({}, 'return', delay)
+    hs.eventtap.keyStroke({}, 'delete', delay)
+    hs.eventtap.keyStroke({}, 'up', delay)
+    hs.eventtap.keyStroke({}, 'left', delay)
+  end
+end
+
+local lineMoveUpDownBinding = {
+  hs.hotkey.bind({'cmd', 'ctrl'}, 'down', moveLineDown()),
+  hs.hotkey.bind({'cmd', 'ctrl'}, 'up', moveLineUp())
+}
+
+hs.window.filter.new('Evernote')
+  :subscribe(hs.window.filter.windowFocused, function() enableAll(lineMoveUpDownBinding) end)
+  :subscribe(hs.window.filter.windowUnfocused, function() disableAll(lineMoveUpDownBinding) end)
 
 ---------------------------------------------------------
 -- Reload config
