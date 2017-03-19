@@ -48,6 +48,11 @@ export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 PATH=$PATH:$HOME/lib/google_appengine/
 
 # peco
+function pe() {
+  #ack "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less -N '
+  pt "$@" . | peco --exec 'awk -F : '"'"'{print "+" $2 " " $1}'"'"' | xargs less -N '
+}
+
 function peco-select-history() {
     local tac
     if which tac > /dev/null; then
