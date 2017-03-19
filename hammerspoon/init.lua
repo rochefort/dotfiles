@@ -112,8 +112,8 @@ local function moveLineUp()
 end
 
 local lineMoveUpDownBinding = {
-  hs.hotkey.bind({'cmd', 'ctrl'}, 'down', moveLineDown()),
-  hs.hotkey.bind({'cmd', 'ctrl'}, 'up', moveLineUp())
+  hs.hotkey.new({'cmd', 'ctrl'}, 'down', moveLineDown()),
+  hs.hotkey.new({'cmd', 'ctrl'}, 'up', moveLineUp())
 }
 
 hs.window.filter.new('Evernote')
