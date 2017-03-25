@@ -38,7 +38,7 @@
 
   'initialize':
     prefix: 'init'
-    body: 'def initialize\n    $0\nend'
+    body: 'def initialize\n  $0\nend'
 
 # Rails
 '.source.ruby.rails':
