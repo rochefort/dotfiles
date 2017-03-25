@@ -36,6 +36,10 @@
     prefix: 'ta'
     body: 'task :$1 do\n\t$0\nend'
 
+  'initialize':
+    prefix: 'init'
+    body: 'def initialize\n    $0\nend'
+
 # Rails
 '.source.ruby.rails':
   'belongs_to':
