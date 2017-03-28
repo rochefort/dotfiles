@@ -262,7 +262,11 @@ augroup MyAutoCmd
     autocmd QuickFixCmdPost lmake,lgrep,lgrepadd,lvimgrep,lvimgrepadd lwin
 
     "前回表示位置を記憶
-    autocmd BufRead * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    "autocmd BufRead * if line("'\"") > 1 && line("'\"") <= line("$") | exe "normal! g'\"" | endif
+    autocmd BufRead *
+        \ if expand('%:p') !~# '\m/\.git/' && line("'\"") > 0 && line("'\"") <= line("$") |
+        \     exe "normal! g`\"" |
+        \ endif
 
     " html
     autocmd BufNewFile *.html 0r $HOME/.vim/templates/skel.html
