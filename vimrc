@@ -102,7 +102,6 @@ set ambiwidth=double " 記号(※とか△とか)入力時にカーソルがズ�
 set autoindent
 set autoread                   " 外部のエディタで編集中のファイルが変更されたら再読み込み
 set backspace=indent,eol,start
-set nobackup
 set backupskip=/tmp/*,/private/tmp/*
 "set backupdir=~/.Trash
 set clipboard+=autoselect      " visual selection -> clipboard
