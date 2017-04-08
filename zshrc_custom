@@ -127,6 +127,8 @@ remove_xattr() {
 }
 codeeval() {
  rake codeeval["$1"]
+ cd "$1"
+ a .
 }
 
 # The next line updates PATH for the Google Cloud SDK.

@@ -22,8 +22,5 @@ ARGF.each_line do |line|
 end
   EOS
   open("#{script_name}.rb", 'w') { |f| f.puts template }
-  puts "created #{challenge}."
-  sh "cd #{challenge}"
-  sh "a \."
 end
 
