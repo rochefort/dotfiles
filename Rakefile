@@ -23,4 +23,3 @@ end
   EOS
   open("#{script_name}.rb", "w") { |f| f.puts template }
 end
-
