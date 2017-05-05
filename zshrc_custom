@@ -45,7 +45,7 @@ export PATH=$PATH:$GOPATH/bin
 #export PATH=$PATH:$HOME/Library/Android/sdk/platform-tools
 
 # google app engine
-PATH=$PATH:$HOME/lib/google_appengine/
+PATH=$PATH:$HOME/lib/google_appengine
 
 #---------------------------------------
 # peco
