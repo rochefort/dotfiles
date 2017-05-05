@@ -16,6 +16,7 @@
 
 # my aliases
 alias ls='ls -GF'
+alias ltr='ls -trl'
 alias h='history'
 alias fcd='source fcd.sh'
 #alias memo='lessorg ~/memo.txt'
