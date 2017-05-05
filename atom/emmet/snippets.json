@@ -1,0 +1,9 @@
+{
+	"html": {
+		"abbreviations": {
+		"!": "!!!+doc",
+		"html:5":   "!!!+doc",
+		"doc": "html>(head>meta[charset=${charset}]+title{${1:title}})+body"
+		}
+	}
+}
