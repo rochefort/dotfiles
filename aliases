@@ -34,6 +34,7 @@ alias gls='git log --stat --pretty=format:"%C(yellow)%h %Cgreen%cr %Cblue%cn %Cr
 alias gs='git status'
 alias gd='git diff'
 alias gdc='git diff --cached'
+alias gdf='git diff-tree --no-commit-id --name-only -r f412099'
 alias gdh='git diff HEAD'
 alias gc='git commit'
 alias ga='git add'
