@@ -38,7 +38,7 @@
   'ctrl-h': 'tree-view:collapse-directory'
   'ctrl-j': 'core:move-down'
   'ctrl-k': 'core:move-up'
-  'ctrl-l': 'tree-view:expand-directory'
+  # 'ctrl-l': 'tree-view:expand-directory'
   'ctrl-l': 'tree-view:open-selected-entry'
   'l': 'tree-view:open-selected-entry'
 
