@@ -20,10 +20,9 @@ export PATH=$HOME/bin:$PATH
 # hombrew-cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
-# rbenv
-if which rbenv > /dev/null; then
-    eval "$(rbenv init -)"
-fi
+# anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
