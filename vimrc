@@ -113,6 +113,7 @@ set foldmethod=syntax
 set foldlevel=100
 set formatoptions+=r
 set helplang=en,ja
+set hidden
 set laststatus=2
 set list
 set listchars=tab:▸\ 
