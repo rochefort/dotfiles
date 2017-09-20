@@ -149,6 +149,21 @@
     prefix: 'pr'
     body: 'print_r($0);'
 
+  "exit()":
+    prefix: "x"
+    body: "exit($0);"
+
+  "var_dump() and exit()":
+    prefix: "ve"
+    body: """
+      var_dump("${1:called}");
+      exit();
+    """
+
+  "debug_backtrace()":
+    prefix: "back"
+    body: "debug_backtrace();"
+
 # CodeIgniter
   'if …':
     'prefix': 'if'
@@ -186,6 +201,19 @@
   "log_message('info', '')":
     prefix: "logi"
     body: "log_message('info', '${1}');"
+
+  "log_message('warn', '')":
+    prefix: "logw"
+    body: "log_message('warn', '${1}');"
+
+  "comment block":
+    prefix: "cm"
+    body: """
+    /**
+     * $0
+     *
+     */
+    """
 
 '.text.html.php':
   '<? ;?>':
