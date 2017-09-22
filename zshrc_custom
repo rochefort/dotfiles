@@ -98,7 +98,6 @@ bindkey "^g^g" peco-select-git-add
 #---------------------------------------
 # Others
 #---------------------------------------
-code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 c() { open $1 -a /Applications/CotEditor.app }
 d() { open dict:///"$@" ;say "$@" }
 git() { hub "$@" }
