@@ -67,6 +67,10 @@
     prefix: 'init'
     body: 'def initialize\n  $0\nend'
 
+  'exit':
+    prefix: 'x'
+    body: 'exit'
+
 # Rails
 '.source.ruby.rails':
   'belongs_to':
