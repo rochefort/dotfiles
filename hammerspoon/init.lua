@@ -16,7 +16,7 @@ local function enableAll(keySet)
   for k, v in pairs(keySet) do v:enable() end
 end
 
-local function hasValue (tab, val)
+local function hasValue(tab, val)
   for index, value in ipairs(tab) do
     if value == val then
       return true
