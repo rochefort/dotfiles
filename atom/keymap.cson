@@ -2,6 +2,9 @@
   'ctrl-[': 'pane:show-previous-item'
   'ctrl-]': 'pane:show-next-item'
 
+'.platform-darwin':
+  'cmd-¥': 'tree-view:toggle'
+
 '.platform-darwin atom-text-editor':
   'ctrl-j': 'core:move-down'
   'ctrl-k': 'core:move-up'
