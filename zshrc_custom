@@ -109,6 +109,7 @@ crontab() {
 jqs() {
   echo "$@" | jq . -C | less -R
 }
+loop() { while true; do "$@"; sleep 1; done }
 pretty_html() {
   echo $1 | ruby -rcgi -ne 'puts CGI.pretty $_'
 }
