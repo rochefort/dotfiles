@@ -43,7 +43,7 @@ alias ga='git add'
 alias gb='hub browse'
 alias r='rails'
 alias cask='brew cask'
-alias trend='g trend -n 10 && g trend -l ruby -n 5 && g trend -l JavaScript -n 5 && g trend -l objective-c -n 5 && g trend -l swift -n 3 && g trend -l php -n 3'
+alias trend='g trend -n 10 && g trend -l ruby -n 5 && g trend -l JavaScript -n 5 && g trend -l php -n 3'
 
 alias t='tig'
 
