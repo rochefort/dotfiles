@@ -26,6 +26,8 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init --no-rehash -)"
+export PATH=$PATH:`chromedriver-path`
+
 
 # nodebrew
 export PATH=$HOME/.nodebrew/current/bin:$PATH
