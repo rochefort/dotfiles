@@ -12,7 +12,7 @@ unalias d 2>/dev/null
 export EDITOR='code'
 export VISUAL='vim'
 
-export LC_ALL='ja_JP.UTF-8'
+#export LC_ALL='ja_JP.UTF-8'
 
 # add paths
 export PATH=$HOME/bin:$PATH
