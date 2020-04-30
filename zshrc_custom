@@ -20,6 +20,9 @@ export PATH=$HOME/bin:$PATH
 # hombrew-cask
 export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
+# openssl(homebrew)
+export PATH="/usr/local/opt/openssl/bin:$PATH"
+
 # anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 eval "$(anyenv init --no-rehash -)"
