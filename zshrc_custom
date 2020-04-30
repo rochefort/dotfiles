@@ -108,7 +108,7 @@ bindkey "^g^g" peco-select-git-add
 #---------------------------------------
 c() { open $1 -a /Applications/CotEditor.app }
 d() { open dict:///"$@" ;say "$@" }
-git() { hub "$@" }
+#git() { hub "$@" }
 crontab() {
   if [ $@ != "-r" ]; then
     EDITOR=$HOME/bin/vim/bin/vim;/usr/bin/crontab $@
