@@ -50,6 +50,9 @@ PATH=$PATH:$HOME/lib/google_appengine
 # direnv
 eval "$(direnv hook zsh)"
 
+# Mac OS Catalina
+export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+
 #---------------------------------------
 # peco
 #---------------------------------------
