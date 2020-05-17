@@ -1,5 +1,6 @@
 # brew install caskroom/cask/brew-cask
 
+#brew cask install android-studio
 #brew cask install clamav
 #cask install dropbox
 #cask install evernote
@@ -7,12 +8,11 @@
 #cask install skitch
 #cask install github
 #cask install google-chrome
+#brew cask install virtualbox
+#brew cask install vagrant
 
 
 brew cask install alfred
-brew cask install android-studio
 brew cask install appcleaner
 brew cask install coteditor
-brew cask install virtualbox
-brew cask install vagrant
 
