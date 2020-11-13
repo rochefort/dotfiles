@@ -122,11 +122,6 @@ pretty_html() {
 remove_xattr() {
   xattr $1 | xargs -Iattr xattr -d attr $1
 }
-codeeval() {
- rake codeeval["$1"]
- cd "$1"
- a .
-}
 
 itermprof() { echo -e "\033]1337;SetProfile=$1\a" }
 
