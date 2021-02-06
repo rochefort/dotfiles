@@ -2,4 +2,3 @@ set main-view = id date author commit-title:graph=yes,refs=yes
 
 bind generic <Ctrl-f> move-page-down
 bind generic <Ctrl-b> move-page-up
-
