@@ -31,7 +31,7 @@ eval "$(anyenv init --no-rehash -)"
 export PATH=$HOME/.composer/vendor/bin:$PATH
 
 # java
-export JAVA_HOME=`/usr/libexec/java_home`
+#export JAVA_HOME=`/usr/libexec/java_home`
 
 # go
 # export GOROOT=`go env GOROOT`
