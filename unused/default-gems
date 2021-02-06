@@ -1,9 +1,6 @@
 benchmark-ips
 bundler
-awesome_print
-emot
 gem-search
-git-stars
 git-trend
 hirb
 hirb-unicode
@@ -14,5 +11,3 @@ rails
 rdefs
 reditor
 rubocop
-wirble
-
