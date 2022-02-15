@@ -9,7 +9,8 @@ bindkey "^B" backward-word
 # unalias for prezto
 unalias d 2>/dev/null
 
-export EDITOR='code'
+#export EDITOR='code'
+export EDITOR='vim'
 export VISUAL='vim'
 
 #export LC_ALL='ja_JP.UTF-8'
