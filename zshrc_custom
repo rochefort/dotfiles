@@ -20,7 +20,7 @@ export BUNDLER_EDITOR='code'
 export PATH=$HOME/bin:$PATH
 
 # hombrew-cask
-export HOMEBREW_CASK_OPTS="--appdir=/Applications"
+#export HOMEBREW_CASK_OPTS="--appdir=/Applications"
 
 # openssl(homebrew)
 export PATH="/usr/local/opt/openssl/bin:$PATH"
