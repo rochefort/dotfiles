@@ -229,7 +229,7 @@ nnoremap :rm :Rmodel<CR>
 augroup MyAutoCmd
     autocmd!
 
-    autocmd FileType c,cpp,perl,sh,vim set ts=4 sw=4 expandtab
+    autocmd FileType c,cpp,perl,sh,vim,conf set ts=4 sw=4 expandtab
     autocmd FileType java set ts=2 sw=2 expandtab
     autocmd FileType python set ts=4 sw=4 expandtab
     autocmd FileType ruby,eruby,cucumber set nowrap ts=2 sw=2 expandtab
