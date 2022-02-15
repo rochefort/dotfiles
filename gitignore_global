@@ -1,3 +1,0 @@
-# https://docs.github.com/en/github/using-git/ignoring-files
-# git config --global core.excludesfile ~/.gitignore_global
-.DS_Store
