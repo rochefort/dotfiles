@@ -88,12 +88,12 @@ alias s='say'
 
 # mysql
 function SELECT () {
-    mysql -uroot -e "SET NAMES utf8; SELECT $*"
+    mysql -uroot -h 127.0.0.1 -e "SET NAMES utf8; SELECT $*"
 }
 
 
 function SHOW () {
-    mysql -uroot -e "SET NAMES utf8; SHOW $*"
+    mysql -uroot -h 127.0.0.1 -e "SET NAMES utf8; SHOW $*"
 }
 
 alias SELECT="noglob SELECT"
