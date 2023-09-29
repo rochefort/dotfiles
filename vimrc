@@ -64,7 +64,7 @@ Plugin 'kchmck/vim-coffee-script'
 
 "git
 "Plugin 'motemen/git-vim'
-Plugin 'tpope/vim-fugitive'
+"Plugin 'tpope/vim-fugitive'
 
 call vundle#end()
 
