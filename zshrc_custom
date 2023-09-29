@@ -114,6 +114,16 @@ peco-select-git-add() {
 zle -N peco-select-git-add
 bindkey "^g^g" peco-select-git-add
 
+# -- git checkout
+gch() {
+  git branch -a | cut -b 3- | grep -v -- "->" | peco | sed -e "s%remotes/origin/%%" | xargs git checkout
+}
+
+# -- ghq
+peco-cd-ghq-list() {
+  cd "$(ghq list --full-path | peco)"
+}
+
 #---------------------------------------
 # Others
 #---------------------------------------
