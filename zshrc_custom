@@ -53,13 +53,17 @@ export PATH="/usr/local/opt/openssl/bin:$PATH"
 # google app engine
 PATH=$PATH:$HOME/lib/google_appengine
 
+# asdf
+. /usr/local/opt/asdf/libexec/asdf.sh
 #export PATH=$GOPATH/bin:$PATH
 
 # direnv
+#source "$(asdf hook zsh)"
 eval "$(direnv hook zsh)"
 
 # Mac OS Catalina
 export SDKROOT="$(xcrun --sdk macosx --show-sdk-path)"
+
 
 #---------------------------------------
 # peco
