@@ -52,6 +52,8 @@ export PATH="/usr/local/opt/git/bin:$PATH"
 # google app engine
 PATH=$PATH:$HOME/lib/google_appengine
 
+#export PATH=$GOPATH/bin:$PATH
+
 # direnv
 eval "$(direnv hook zsh)"
 
