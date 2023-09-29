@@ -24,7 +24,8 @@ export PATH=$HOME/bin:$PATH
 
 # homebrew bin
 export PATH="/usr/local/opt/openssl/bin:$PATH"
-export PATH="/usr/local/opt/git/bin:$PATH"
+#export PATH="/usr/local/bin:$PATH"
+#export PATH="/usr/local/opt/git/bin:$PATH"
 
 # anyenv
 #export PATH="$HOME/.anyenv/bin:$PATH"
