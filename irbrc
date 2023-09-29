@@ -6,6 +6,8 @@ IRB.conf.update(
 #   ENV.include?('RAILS_ENV') or defined?(Rails.env)
 # end
 
+require 'katakata_irb' rescue nil
+
 begin
   require 'irb/completion'
   # unless rails_console?
@@ -30,3 +32,14 @@ rescue Exception => e
   puts e.message
   puts e.backtrace
 end
+
+IRB::Context.prepend(Module.new{
+  def evaluate(line, *, **)
+    case line
+    when /\A\$ /
+      line.replace("show_source #{line.sub(/\A\$ /, '').strip.dump}\n")
+    end
+    super
+  end
+})
+
