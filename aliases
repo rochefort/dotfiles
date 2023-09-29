@@ -51,6 +51,8 @@ alias di='docker images'
 alias dps='docker ps'
 alias dpsa='docker ps -a'
 
+alias ghql='peco-cd-ghq-list'
+
 alias s='say'
 #alias plagger='plagger -c /usr/local/plagger/config.yaml'
 #alias refe='refe_utf8'
